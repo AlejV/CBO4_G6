@@ -232,8 +232,8 @@ namespace StreamingMusicService
             index = lvAllEmployees.FocusedItem.Index;
 
             //function
-            MessageBox.Show(index.ToString());
-            MessageBox.Show(allEmployees[index].id.ToString());
+            //MessageBox.Show(index.ToString());
+            //MessageBox.Show(allEmployees[index].id.ToString());
             string sql = $"DELETE FROM employee WHERE employeeID={allEmployees[index].id};";
             MySqlCommand cmd = new MySqlCommand(sql, this.conn);
             //cmd.Parameters.AddWithValue("@userId", id); //int id = Convert.ToInt32(tbxId.Text);
@@ -243,6 +243,7 @@ namespace StreamingMusicService
             lvAllEmployees.Items.Clear();
             LoadAllEmployees();
             LoadStats();
+            MessageBox.Show($"Employee with id {allEmployees[index].id.ToString()} removed");
         }
 
         private void btnConfirmChanges_Click(object sender, EventArgs e)
