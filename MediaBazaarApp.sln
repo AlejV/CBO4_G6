@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
-VisualStudioVersion = 16.0.29230.47
+VisualStudioVersion = 16.0.29920.165
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediaBazaarApp", "StreamingMusicService\MediaBazaarApp.csproj", "{DDC21E6C-D0B5-4BED-B450-4B26615647BD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediaBazaarApp", "MediaBazaarSolution\MediaBazaarApp.csproj", "{DDC21E6C-D0B5-4BED-B450-4B26615647BD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,6 +20,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {4085E0CF-F9AC-4667-932B-2001A483B8A7}
+		SolutionGuid = {BFBB98EB-1B13-4BD3-9CBC-A756B41F8CDD}
 	EndGlobalSection
 EndGlobal

@@ -1,4 +1,4 @@
-﻿namespace StreamingMusicService
+﻿namespace MediaBazaarSolution
 {
     partial class DepartmentManagement
     {
@@ -44,22 +44,22 @@
             "Employee",
             ""}, -1);
             this.label4 = new System.Windows.Forms.Label();
-            this.listBox2 = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.listView5 = new System.Windows.Forms.ListView();
-            this.chProductID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.lvProducts_Dep = new System.Windows.Forms.ListView();
             this.chProductName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chQuantity = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chPrice = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label2 = new System.Windows.Forms.Label();
-            this.listView4 = new System.Windows.Forms.ListView();
+            this.lvEmployees_Dep = new System.Windows.Forms.ListView();
             this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader14 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader15 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.tbDepartmentName = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.btnAddDepartment = new System.Windows.Forms.Button();
+            this.lbCurrentDep = new System.Windows.Forms.ListBox();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -73,21 +73,6 @@
             this.label4.TabIndex = 32;
             this.label4.Text = "Current Departments:";
             // 
-            // listBox2
-            // 
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.ItemHeight = 20;
-            this.listBox2.Items.AddRange(new object[] {
-            "Paints",
-            "Tools",
-            "Gardening",
-            "Electronics",
-            ""});
-            this.listBox2.Location = new System.Drawing.Point(12, 56);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(205, 304);
-            this.listBox2.TabIndex = 31;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -99,44 +84,38 @@
             this.label1.Text = "Products in selected department:";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // listView5
+            // lvProducts_Dep
             // 
-            this.listView5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.lvProducts_Dep.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.listView5.BackColor = System.Drawing.Color.LightGreen;
-            this.listView5.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.chProductID,
+            this.lvProducts_Dep.BackColor = System.Drawing.Color.LightGreen;
+            this.lvProducts_Dep.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.chProductName,
             this.chQuantity,
             this.chPrice});
-            this.listView5.FullRowSelect = true;
-            this.listView5.GridLines = true;
-            this.listView5.HideSelection = false;
-            this.listView5.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
+            this.lvProducts_Dep.FullRowSelect = true;
+            this.lvProducts_Dep.GridLines = true;
+            this.lvProducts_Dep.HideSelection = false;
+            this.lvProducts_Dep.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
             listViewItem1,
             listViewItem2});
-            this.listView5.Location = new System.Drawing.Point(235, 38);
-            this.listView5.Name = "listView5";
-            this.listView5.Size = new System.Drawing.Size(313, 149);
-            this.listView5.TabIndex = 33;
-            this.listView5.UseCompatibleStateImageBehavior = false;
-            this.listView5.View = System.Windows.Forms.View.Details;
-            // 
-            // chProductID
-            // 
-            this.chProductID.Text = "ID";
-            this.chProductID.Width = 45;
+            this.lvProducts_Dep.Location = new System.Drawing.Point(235, 38);
+            this.lvProducts_Dep.Name = "lvProducts_Dep";
+            this.lvProducts_Dep.Size = new System.Drawing.Size(366, 187);
+            this.lvProducts_Dep.TabIndex = 33;
+            this.lvProducts_Dep.UseCompatibleStateImageBehavior = false;
+            this.lvProducts_Dep.View = System.Windows.Forms.View.Details;
             // 
             // chProductName
             // 
             this.chProductName.Text = "Name";
-            this.chProductName.Width = 102;
+            this.chProductName.Width = 135;
             // 
             // chQuantity
             // 
             this.chQuantity.Text = "Quantity";
-            this.chQuantity.Width = 71;
+            this.chQuantity.Width = 82;
             // 
             // chPrice
             // 
@@ -147,69 +126,70 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(232, 213);
+            this.label2.Location = new System.Drawing.Point(234, 242);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(290, 20);
             this.label2.TabIndex = 35;
             this.label2.Text = "Employees in selected department:";
             // 
-            // listView4
+            // lvEmployees_Dep
             // 
-            this.listView4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.lvEmployees_Dep.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.listView4.BackColor = System.Drawing.Color.LightGreen;
-            this.listView4.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.lvEmployees_Dep.BackColor = System.Drawing.Color.LightGreen;
+            this.lvEmployees_Dep.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader13,
             this.columnHeader14,
             this.columnHeader15});
-            this.listView4.FullRowSelect = true;
-            this.listView4.GridLines = true;
-            this.listView4.HideSelection = false;
-            this.listView4.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
+            this.lvEmployees_Dep.FullRowSelect = true;
+            this.lvEmployees_Dep.GridLines = true;
+            this.lvEmployees_Dep.HideSelection = false;
+            this.lvEmployees_Dep.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
             listViewItem3});
-            this.listView4.Location = new System.Drawing.Point(238, 238);
-            this.listView4.Name = "listView4";
-            this.listView4.Size = new System.Drawing.Size(310, 178);
-            this.listView4.TabIndex = 36;
-            this.listView4.UseCompatibleStateImageBehavior = false;
-            this.listView4.View = System.Windows.Forms.View.Details;
+            this.lvEmployees_Dep.Location = new System.Drawing.Point(238, 265);
+            this.lvEmployees_Dep.Name = "lvEmployees_Dep";
+            this.lvEmployees_Dep.Size = new System.Drawing.Size(363, 217);
+            this.lvEmployees_Dep.TabIndex = 36;
+            this.lvEmployees_Dep.UseCompatibleStateImageBehavior = false;
+            this.lvEmployees_Dep.View = System.Windows.Forms.View.Details;
             // 
             // columnHeader13
             // 
-            this.columnHeader13.Text = "ID";
+            this.columnHeader13.Text = "Name";
             this.columnHeader13.Width = 59;
             // 
             // columnHeader14
             // 
-            this.columnHeader14.Text = "Employee";
+            this.columnHeader14.Text = "Position";
             this.columnHeader14.Width = 125;
             // 
             // columnHeader15
             // 
-            this.columnHeader15.Text = "Position";
+            this.columnHeader15.Text = "Department";
             this.columnHeader15.Width = 100;
             // 
             // groupBox2
             // 
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.BackColor = System.Drawing.Color.Gainsboro;
-            this.groupBox2.Controls.Add(this.textBox4);
+            this.groupBox2.Controls.Add(this.tbDepartmentName);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(556, 141);
+            this.groupBox2.Location = new System.Drawing.Point(611, 141);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(293, 158);
             this.groupBox2.TabIndex = 37;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Add Department:";
             // 
-            // textBox4
+            // tbDepartmentName
             // 
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.textBox4.Location = new System.Drawing.Point(82, 72);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(205, 28);
-            this.textBox4.TabIndex = 24;
+            this.tbDepartmentName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.tbDepartmentName.Location = new System.Drawing.Point(82, 72);
+            this.tbDepartmentName.Name = "tbDepartmentName";
+            this.tbDepartmentName.Size = new System.Drawing.Size(205, 28);
+            this.tbDepartmentName.TabIndex = 24;
             // 
             // label7
             // 
@@ -223,33 +203,62 @@
             // 
             // button1
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.BackColor = System.Drawing.Color.Gray;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(12, 364);
+            this.button1.Location = new System.Drawing.Point(12, 402);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(205, 52);
+            this.button1.Size = new System.Drawing.Size(212, 52);
             this.button1.TabIndex = 38;
             this.button1.Text = "Remove selected department";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btnAddDepartment
+            // 
+            this.btnAddDepartment.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAddDepartment.BackColor = System.Drawing.Color.Gray;
+            this.btnAddDepartment.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddDepartment.ForeColor = System.Drawing.Color.White;
+            this.btnAddDepartment.Location = new System.Drawing.Point(621, 305);
+            this.btnAddDepartment.Name = "btnAddDepartment";
+            this.btnAddDepartment.Size = new System.Drawing.Size(283, 52);
+            this.btnAddDepartment.TabIndex = 39;
+            this.btnAddDepartment.Text = "Add department";
+            this.btnAddDepartment.UseVisualStyleBackColor = false;
+            this.btnAddDepartment.Click += new System.EventHandler(this.btnAddDepartment_Click);
+            // 
+            // lbCurrentDep
+            // 
+            this.lbCurrentDep.FormattingEnabled = true;
+            this.lbCurrentDep.ItemHeight = 20;
+            this.lbCurrentDep.Items.AddRange(new object[] {
+            " "});
+            this.lbCurrentDep.Location = new System.Drawing.Point(12, 75);
+            this.lbCurrentDep.Margin = new System.Windows.Forms.Padding(2);
+            this.lbCurrentDep.Name = "lbCurrentDep";
+            this.lbCurrentDep.Size = new System.Drawing.Size(212, 324);
+            this.lbCurrentDep.TabIndex = 40;
+            this.lbCurrentDep.SelectedIndexChanged += new System.EventHandler(this.lbCurrentDep_SelectedIndexChanged);
             // 
             // DepartmentManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(861, 446);
+            this.ClientSize = new System.Drawing.Size(914, 485);
+            this.Controls.Add(this.lbCurrentDep);
+            this.Controls.Add(this.btnAddDepartment);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.listView4);
+            this.Controls.Add(this.lvEmployees_Dep);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.listView5);
+            this.Controls.Add(this.lvProducts_Dep);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.listBox2);
             this.Name = "DepartmentManagement";
             this.Text = "DepartmentManagement";
+            this.Load += new System.EventHandler(this.DepartmentManagement_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
@@ -260,21 +269,21 @@
         #endregion
 
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ListBox listBox2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ListView listView5;
-        private System.Windows.Forms.ColumnHeader chProductID;
+        private System.Windows.Forms.ListView lvProducts_Dep;
         private System.Windows.Forms.ColumnHeader chProductName;
         private System.Windows.Forms.ColumnHeader chQuantity;
         private System.Windows.Forms.ColumnHeader chPrice;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ListView listView4;
+        private System.Windows.Forms.ListView lvEmployees_Dep;
         private System.Windows.Forms.ColumnHeader columnHeader13;
         private System.Windows.Forms.ColumnHeader columnHeader14;
         private System.Windows.Forms.ColumnHeader columnHeader15;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox tbDepartmentName;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnAddDepartment;
+        private System.Windows.Forms.ListBox lbCurrentDep;
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace StreamingMusicService
+﻿namespace MediaBazaarSolution
 {
     partial class EmployeeManagement
     {
@@ -28,32 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewItem listViewItem51 = new System.Windows.Forms.ListViewItem(new string[] {
-            "09-03-2020",
-            "Peter ",
-            "Franco",
-            "Mary"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem52 = new System.Windows.Forms.ListViewItem(new string[] {
-            "10-03-2020",
-            "Peter",
-            "",
-            "Mary"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem53 = new System.Windows.Forms.ListViewItem("11-03-2020");
-            System.Windows.Forms.ListViewItem listViewItem54 = new System.Windows.Forms.ListViewItem("12-03-2020");
-            System.Windows.Forms.ListViewItem listViewItem55 = new System.Windows.Forms.ListViewItem("13-03-2020");
-            System.Windows.Forms.ListViewItem listViewItem56 = new System.Windows.Forms.ListViewItem(new string[] {
-            "09-03-2020",
-            "Ivan",
-            "Franco",
-            "Mary"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem57 = new System.Windows.Forms.ListViewItem(new string[] {
-            "10-03-2020",
-            "Ivan",
-            "Franco",
-            "Mary"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem58 = new System.Windows.Forms.ListViewItem("11-03-2020");
-            System.Windows.Forms.ListViewItem listViewItem59 = new System.Windows.Forms.ListViewItem("12-03-2020");
-            System.Windows.Forms.ListViewItem listViewItem60 = new System.Windows.Forms.ListViewItem("13-03-2020");
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.btnAddEmployee = new System.Windows.Forms.Button();
@@ -66,8 +40,6 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.tbEmployeeID = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.tbContactPhone = new System.Windows.Forms.TextBox();
             this.tbContactName = new System.Windows.Forms.TextBox();
@@ -91,8 +63,6 @@
             this.tbInsContactName = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.tbInsEmployeeID = new System.Windows.Forms.TextBox();
-            this.label17 = new System.Windows.Forms.Label();
             this.tbInsAddress = new System.Windows.Forms.RichTextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
@@ -114,52 +84,53 @@
             this.label41 = new System.Windows.Forms.Label();
             this.btnRemoveEmployee = new System.Windows.Forms.Button();
             this.lvAllEmployees = new System.Windows.Forms.ListView();
-            this.chID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chPosition = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chDepartment = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabAssignShifts = new System.Windows.Forms.TabPage();
+            this.gbDetails = new System.Windows.Forms.GroupBox();
+            this.lblDate_Shifts = new System.Windows.Forms.Label();
+            this.lblDepartment_Shifts = new System.Windows.Forms.Label();
+            this.lblEmployee_Shifts = new System.Windows.Forms.Label();
+            this.lblShiftType_Shifts = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
+            this.label33 = new System.Windows.Forms.Label();
+            this.label32 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnRemoveShift = new System.Windows.Forms.Button();
+            this.gbFilterDate = new System.Windows.Forms.GroupBox();
+            this.btnFilterDate_Shifts = new System.Windows.Forms.Button();
+            this.label42 = new System.Windows.Forms.Label();
+            this.dtPickerFrom_Shifts = new System.Windows.Forms.DateTimePicker();
+            this.label43 = new System.Windows.Forms.Label();
+            this.dtPickerTo_Shifts = new System.Windows.Forms.DateTimePicker();
+            this.lbEmployees_Shifts = new System.Windows.Forms.ListBox();
+            this.label38 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.dtPicker_Shifts = new System.Windows.Forms.DateTimePicker();
             this.tcShifts = new System.Windows.Forms.TabControl();
             this.tpMorning = new System.Windows.Forms.TabPage();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.label38 = new System.Windows.Forms.Label();
-            this.label37 = new System.Windows.Forms.Label();
-            this.label34 = new System.Windows.Forms.Label();
-            this.comboBox10 = new System.Windows.Forms.ComboBox();
             this.gbMorning = new System.Windows.Forms.GroupBox();
             this.lvMorning = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.dateTimePicker6 = new System.Windows.Forms.DateTimePicker();
             this.tpAfternoon = new System.Windows.Forms.TabPage();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.label36 = new System.Windows.Forms.Label();
-            this.label35 = new System.Windows.Forms.Label();
-            this.label33 = new System.Windows.Forms.Label();
-            this.comboBox9 = new System.Windows.Forms.ComboBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.listView3 = new System.Windows.Forms.ListView();
+            this.lvAfternoon = new System.Windows.Forms.ListView();
             this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.dateTimePicker5 = new System.Windows.Forms.DateTimePicker();
             this.tpEvening = new System.Windows.Forms.TabPage();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.label32 = new System.Windows.Forms.Label();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.listView2 = new System.Windows.Forms.ListView();
+            this.lvEvening = new System.Windows.Forms.ListView();
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.label26 = new System.Windows.Forms.Label();
-            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
-            this.label28 = new System.Windows.Forms.Label();
-            this.comboBox7 = new System.Windows.Forms.ComboBox();
-            this.btnUpdateShifts = new System.Windows.Forms.Button();
+            this.btnAssignShift = new System.Windows.Forms.Button();
             this.tpCalendar = new System.Windows.Forms.TabPage();
             this.label31 = new System.Windows.Forms.Label();
             this.lblPayroll = new System.Windows.Forms.Label();
@@ -174,7 +145,6 @@
             this.cbxMonth = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.lvStats = new System.Windows.Forms.ListView();
-            this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader14 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader15 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader16 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -195,6 +165,8 @@
             this.tpWorkInfo.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.tabAssignShifts.SuspendLayout();
+            this.gbDetails.SuspendLayout();
+            this.gbFilterDate.SuspendLayout();
             this.tcShifts.SuspendLayout();
             this.tpMorning.SuspendLayout();
             this.gbMorning.SuspendLayout();
@@ -215,7 +187,7 @@
             this.tabControl2.Location = new System.Drawing.Point(15, 46);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(877, 501);
+            this.tabControl2.Size = new System.Drawing.Size(887, 513);
             this.tabControl2.TabIndex = 5;
             // 
             // tabPage1
@@ -227,20 +199,20 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 29);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(869, 468);
+            this.tabPage1.Size = new System.Drawing.Size(879, 480);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Add employee";
             // 
             // btnAddEmployee
             // 
-            this.btnAddEmployee.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.btnAddEmployee.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAddEmployee.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.btnAddEmployee.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddEmployee.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnAddEmployee.Location = new System.Drawing.Point(6, 394);
+            this.btnAddEmployee.Location = new System.Drawing.Point(6, 406);
             this.btnAddEmployee.Name = "btnAddEmployee";
-            this.btnAddEmployee.Size = new System.Drawing.Size(843, 59);
+            this.btnAddEmployee.Size = new System.Drawing.Size(853, 59);
             this.btnAddEmployee.TabIndex = 13;
             this.btnAddEmployee.Text = "Add new employee";
             this.btnAddEmployee.UseVisualStyleBackColor = false;
@@ -331,8 +303,6 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Silver;
-            this.groupBox1.Controls.Add(this.tbEmployeeID);
-            this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.label25);
             this.groupBox1.Controls.Add(this.tbContactPhone);
             this.groupBox1.Controls.Add(this.tbContactName);
@@ -355,29 +325,11 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Personal Information";
             // 
-            // tbEmployeeID
-            // 
-            this.tbEmployeeID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.tbEmployeeID.Location = new System.Drawing.Point(144, 41);
-            this.tbEmployeeID.Name = "tbEmployeeID";
-            this.tbEmployeeID.Size = new System.Drawing.Size(275, 28);
-            this.tbEmployeeID.TabIndex = 14;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.label1.Location = new System.Drawing.Point(8, 44);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(116, 22);
-            this.label1.TabIndex = 13;
-            this.label1.Text = "Employee ID:";
-            // 
             // label25
             // 
             this.label25.AutoSize = true;
             this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.label25.Location = new System.Drawing.Point(8, 319);
+            this.label25.Location = new System.Drawing.Point(8, 283);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(142, 22);
             this.label25.TabIndex = 12;
@@ -386,7 +338,7 @@
             // tbContactPhone
             // 
             this.tbContactPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.tbContactPhone.Location = new System.Drawing.Point(174, 317);
+            this.tbContactPhone.Location = new System.Drawing.Point(176, 277);
             this.tbContactPhone.Name = "tbContactPhone";
             this.tbContactPhone.Size = new System.Drawing.Size(243, 28);
             this.tbContactPhone.TabIndex = 11;
@@ -394,7 +346,7 @@
             // tbContactName
             // 
             this.tbContactName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.tbContactName.Location = new System.Drawing.Point(174, 275);
+            this.tbContactName.Location = new System.Drawing.Point(176, 239);
             this.tbContactName.Name = "tbContactName";
             this.tbContactName.Size = new System.Drawing.Size(243, 28);
             this.tbContactName.TabIndex = 10;
@@ -403,7 +355,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.label7.Location = new System.Drawing.Point(8, 288);
+            this.label7.Location = new System.Drawing.Point(8, 241);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(152, 22);
             this.label7.TabIndex = 9;
@@ -412,7 +364,7 @@
             // richTextBox1
             // 
             this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBox1.Location = new System.Drawing.Point(146, 218);
+            this.richTextBox1.Location = new System.Drawing.Point(146, 181);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(273, 52);
             this.richTextBox1.TabIndex = 8;
@@ -422,7 +374,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.label2.Location = new System.Drawing.Point(8, 254);
+            this.label2.Location = new System.Drawing.Point(27, 197);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(81, 22);
             this.label2.TabIndex = 7;
@@ -432,7 +384,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.label3.Location = new System.Drawing.Point(6, 188);
+            this.label3.Location = new System.Drawing.Point(6, 149);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(125, 22);
             this.label3.TabIndex = 6;
@@ -441,7 +393,7 @@
             // dateTimePicker1
             // 
             this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(144, 149);
+            this.dateTimePicker1.Location = new System.Drawing.Point(146, 113);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(275, 26);
             this.dateTimePicker1.TabIndex = 5;
@@ -449,7 +401,7 @@
             // tbTel
             // 
             this.tbTel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.tbTel.Location = new System.Drawing.Point(146, 183);
+            this.tbTel.Location = new System.Drawing.Point(146, 146);
             this.tbTel.Name = "tbTel";
             this.tbTel.Size = new System.Drawing.Size(275, 28);
             this.tbTel.TabIndex = 5;
@@ -457,7 +409,7 @@
             // tbLastName
             // 
             this.tbLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.tbLastName.Location = new System.Drawing.Point(146, 113);
+            this.tbLastName.Location = new System.Drawing.Point(146, 76);
             this.tbLastName.Name = "tbLastName";
             this.tbLastName.Size = new System.Drawing.Size(275, 28);
             this.tbLastName.TabIndex = 4;
@@ -465,7 +417,7 @@
             // tbUsername
             // 
             this.tbUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.tbUsername.Location = new System.Drawing.Point(146, 75);
+            this.tbUsername.Location = new System.Drawing.Point(146, 38);
             this.tbUsername.Name = "tbUsername";
             this.tbUsername.Size = new System.Drawing.Size(275, 28);
             this.tbUsername.TabIndex = 3;
@@ -474,7 +426,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.label5.Location = new System.Drawing.Point(8, 154);
+            this.label5.Location = new System.Drawing.Point(8, 117);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(113, 22);
             this.label5.TabIndex = 2;
@@ -484,7 +436,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.label4.Location = new System.Drawing.Point(8, 118);
+            this.label4.Location = new System.Drawing.Point(8, 79);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(101, 22);
             this.label4.TabIndex = 1;
@@ -494,7 +446,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.label9.Location = new System.Drawing.Point(6, 80);
+            this.label9.Location = new System.Drawing.Point(8, 41);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(102, 22);
             this.label9.TabIndex = 0;
@@ -510,7 +462,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 29);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(869, 468);
+            this.tabPage2.Size = new System.Drawing.Size(879, 480);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Remove/Edit employees";
             // 
@@ -520,7 +472,7 @@
             this.btnConfirmChanges.BackColor = System.Drawing.Color.DimGray;
             this.btnConfirmChanges.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfirmChanges.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnConfirmChanges.Location = new System.Drawing.Point(443, 398);
+            this.btnConfirmChanges.Location = new System.Drawing.Point(453, 419);
             this.btnConfirmChanges.Name = "btnConfirmChanges";
             this.btnConfirmChanges.Size = new System.Drawing.Size(410, 42);
             this.btnConfirmChanges.TabIndex = 7;
@@ -536,7 +488,7 @@
             this.tabControl1.Location = new System.Drawing.Point(443, 6);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(410, 386);
+            this.tabControl1.Size = new System.Drawing.Size(410, 398);
             this.tabControl1.TabIndex = 8;
             // 
             // tpPesonalInfo
@@ -545,7 +497,7 @@
             this.tpPesonalInfo.Location = new System.Drawing.Point(4, 29);
             this.tpPesonalInfo.Name = "tpPesonalInfo";
             this.tpPesonalInfo.Padding = new System.Windows.Forms.Padding(3);
-            this.tpPesonalInfo.Size = new System.Drawing.Size(402, 353);
+            this.tpPesonalInfo.Size = new System.Drawing.Size(402, 365);
             this.tpPesonalInfo.TabIndex = 0;
             this.tpPesonalInfo.Text = "Edit Personal Info";
             this.tpPesonalInfo.UseVisualStyleBackColor = true;
@@ -557,8 +509,6 @@
             this.groupBox3.Controls.Add(this.tbInsContactName);
             this.groupBox3.Controls.Add(this.label11);
             this.groupBox3.Controls.Add(this.label16);
-            this.groupBox3.Controls.Add(this.tbInsEmployeeID);
-            this.groupBox3.Controls.Add(this.label17);
             this.groupBox3.Controls.Add(this.tbInsAddress);
             this.groupBox3.Controls.Add(this.label18);
             this.groupBox3.Controls.Add(this.label19);
@@ -580,7 +530,7 @@
             // tbInsContactPhone
             // 
             this.tbInsContactPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.tbInsContactPhone.Location = new System.Drawing.Point(140, 306);
+            this.tbInsContactPhone.Location = new System.Drawing.Point(140, 280);
             this.tbInsContactPhone.Name = "tbInsContactPhone";
             this.tbInsContactPhone.Size = new System.Drawing.Size(244, 28);
             this.tbInsContactPhone.TabIndex = 14;
@@ -589,7 +539,7 @@
             // tbInsContactName
             // 
             this.tbInsContactName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.tbInsContactName.Location = new System.Drawing.Point(140, 268);
+            this.tbInsContactName.Location = new System.Drawing.Point(140, 242);
             this.tbInsContactName.Name = "tbInsContactName";
             this.tbInsContactName.Size = new System.Drawing.Size(244, 28);
             this.tbInsContactName.TabIndex = 13;
@@ -599,7 +549,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.label11.Location = new System.Drawing.Point(9, 309);
+            this.label11.Location = new System.Drawing.Point(9, 283);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(134, 22);
             this.label11.TabIndex = 12;
@@ -609,35 +559,16 @@
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.label16.Location = new System.Drawing.Point(6, 265);
+            this.label16.Location = new System.Drawing.Point(6, 239);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(129, 22);
             this.label16.TabIndex = 11;
             this.label16.Text = "Contact Name:";
             // 
-            // tbInsEmployeeID
-            // 
-            this.tbInsEmployeeID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.tbInsEmployeeID.Location = new System.Drawing.Point(118, 28);
-            this.tbInsEmployeeID.Name = "tbInsEmployeeID";
-            this.tbInsEmployeeID.Size = new System.Drawing.Size(267, 28);
-            this.tbInsEmployeeID.TabIndex = 10;
-            this.tbInsEmployeeID.Text = "Peter";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.label17.Location = new System.Drawing.Point(0, 34);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(111, 22);
-            this.label17.TabIndex = 9;
-            this.label17.Text = "Employee ID";
-            // 
             // tbInsAddress
             // 
             this.tbInsAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbInsAddress.Location = new System.Drawing.Point(97, 209);
+            this.tbInsAddress.Location = new System.Drawing.Point(97, 183);
             this.tbInsAddress.Name = "tbInsAddress";
             this.tbInsAddress.Size = new System.Drawing.Size(288, 46);
             this.tbInsAddress.TabIndex = 8;
@@ -647,7 +578,7 @@
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.label18.Location = new System.Drawing.Point(9, 226);
+            this.label18.Location = new System.Drawing.Point(9, 200);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(81, 22);
             this.label18.TabIndex = 7;
@@ -657,7 +588,7 @@
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.label19.Location = new System.Drawing.Point(0, 169);
+            this.label19.Location = new System.Drawing.Point(0, 143);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(125, 22);
             this.label19.TabIndex = 6;
@@ -667,7 +598,7 @@
             // 
             this.dateTimePickerIns.Font = new System.Drawing.Font("Microsoft Tai Le", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePickerIns.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePickerIns.Location = new System.Drawing.Point(128, 133);
+            this.dateTimePickerIns.Location = new System.Drawing.Point(128, 107);
             this.dateTimePickerIns.Name = "dateTimePickerIns";
             this.dateTimePickerIns.Size = new System.Drawing.Size(256, 28);
             this.dateTimePickerIns.TabIndex = 5;
@@ -676,7 +607,7 @@
             // tbInsTelNumber
             // 
             this.tbInsTelNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.tbInsTelNumber.Location = new System.Drawing.Point(140, 166);
+            this.tbInsTelNumber.Location = new System.Drawing.Point(140, 140);
             this.tbInsTelNumber.Name = "tbInsTelNumber";
             this.tbInsTelNumber.Size = new System.Drawing.Size(244, 28);
             this.tbInsTelNumber.TabIndex = 5;
@@ -685,7 +616,7 @@
             // tbInsLastName
             // 
             this.tbInsLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.tbInsLastName.Location = new System.Drawing.Point(117, 99);
+            this.tbInsLastName.Location = new System.Drawing.Point(117, 73);
             this.tbInsLastName.Name = "tbInsLastName";
             this.tbInsLastName.Size = new System.Drawing.Size(267, 28);
             this.tbInsLastName.TabIndex = 4;
@@ -694,7 +625,7 @@
             // tbInsFirstName
             // 
             this.tbInsFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.tbInsFirstName.Location = new System.Drawing.Point(117, 64);
+            this.tbInsFirstName.Location = new System.Drawing.Point(117, 38);
             this.tbInsFirstName.Name = "tbInsFirstName";
             this.tbInsFirstName.Size = new System.Drawing.Size(267, 28);
             this.tbInsFirstName.TabIndex = 3;
@@ -704,7 +635,7 @@
             // 
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.label20.Location = new System.Drawing.Point(0, 138);
+            this.label20.Location = new System.Drawing.Point(0, 112);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(113, 22);
             this.label20.TabIndex = 2;
@@ -714,7 +645,7 @@
             // 
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.label21.Location = new System.Drawing.Point(0, 104);
+            this.label21.Location = new System.Drawing.Point(0, 78);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(101, 22);
             this.label21.TabIndex = 1;
@@ -724,7 +655,7 @@
             // 
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.label22.Location = new System.Drawing.Point(0, 69);
+            this.label22.Location = new System.Drawing.Point(0, 43);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(102, 22);
             this.label22.TabIndex = 0;
@@ -736,7 +667,7 @@
             this.tpWorkInfo.Location = new System.Drawing.Point(4, 29);
             this.tpWorkInfo.Name = "tpWorkInfo";
             this.tpWorkInfo.Padding = new System.Windows.Forms.Padding(3);
-            this.tpWorkInfo.Size = new System.Drawing.Size(402, 353);
+            this.tpWorkInfo.Size = new System.Drawing.Size(402, 365);
             this.tpWorkInfo.TabIndex = 1;
             this.tpWorkInfo.Text = "Edit Work Info";
             this.tpWorkInfo.UseVisualStyleBackColor = true;
@@ -828,12 +759,12 @@
             // 
             // btnRemoveEmployee
             // 
-            this.btnRemoveEmployee.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.btnRemoveEmployee.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnRemoveEmployee.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRemoveEmployee.Location = new System.Drawing.Point(1, 398);
+            this.btnRemoveEmployee.Location = new System.Drawing.Point(1, 419);
             this.btnRemoveEmployee.Name = "btnRemoveEmployee";
-            this.btnRemoveEmployee.Size = new System.Drawing.Size(436, 42);
+            this.btnRemoveEmployee.Size = new System.Drawing.Size(446, 42);
             this.btnRemoveEmployee.TabIndex = 6;
             this.btnRemoveEmployee.Text = "Remove employee";
             this.btnRemoveEmployee.UseVisualStyleBackColor = true;
@@ -841,12 +772,11 @@
             // 
             // lvAllEmployees
             // 
-            this.lvAllEmployees.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.lvAllEmployees.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lvAllEmployees.BackColor = System.Drawing.Color.LightGreen;
             this.lvAllEmployees.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.chID,
             this.chName,
             this.chPosition,
             this.chDepartment});
@@ -855,16 +785,11 @@
             this.lvAllEmployees.HideSelection = false;
             this.lvAllEmployees.Location = new System.Drawing.Point(6, 6);
             this.lvAllEmployees.Name = "lvAllEmployees";
-            this.lvAllEmployees.Size = new System.Drawing.Size(434, 386);
+            this.lvAllEmployees.Size = new System.Drawing.Size(435, 398);
             this.lvAllEmployees.TabIndex = 7;
             this.lvAllEmployees.UseCompatibleStateImageBehavior = false;
             this.lvAllEmployees.View = System.Windows.Forms.View.Details;
             this.lvAllEmployees.SelectedIndexChanged += new System.EventHandler(this.lvAllEmployees_SelectedIndexChanged);
-            // 
-            // chID
-            // 
-            this.chID.Text = "ID";
-            this.chID.Width = 79;
             // 
             // chName
             // 
@@ -884,86 +809,264 @@
             // tabAssignShifts
             // 
             this.tabAssignShifts.BackColor = System.Drawing.Color.Gainsboro;
+            this.tabAssignShifts.Controls.Add(this.gbDetails);
+            this.tabAssignShifts.Controls.Add(this.btnRemoveShift);
+            this.tabAssignShifts.Controls.Add(this.gbFilterDate);
+            this.tabAssignShifts.Controls.Add(this.lbEmployees_Shifts);
+            this.tabAssignShifts.Controls.Add(this.label38);
+            this.tabAssignShifts.Controls.Add(this.label26);
+            this.tabAssignShifts.Controls.Add(this.dtPicker_Shifts);
             this.tabAssignShifts.Controls.Add(this.tcShifts);
-            this.tabAssignShifts.Controls.Add(this.btnUpdateShifts);
+            this.tabAssignShifts.Controls.Add(this.btnAssignShift);
             this.tabAssignShifts.Location = new System.Drawing.Point(4, 29);
             this.tabAssignShifts.Name = "tabAssignShifts";
-            this.tabAssignShifts.Size = new System.Drawing.Size(869, 468);
+            this.tabAssignShifts.Size = new System.Drawing.Size(879, 480);
             this.tabAssignShifts.TabIndex = 2;
             this.tabAssignShifts.Text = "Assign Shifts";
+            // 
+            // gbDetails
+            // 
+            this.gbDetails.BackColor = System.Drawing.Color.SeaShell;
+            this.gbDetails.Controls.Add(this.lblDate_Shifts);
+            this.gbDetails.Controls.Add(this.lblDepartment_Shifts);
+            this.gbDetails.Controls.Add(this.lblEmployee_Shifts);
+            this.gbDetails.Controls.Add(this.lblShiftType_Shifts);
+            this.gbDetails.Controls.Add(this.label34);
+            this.gbDetails.Controls.Add(this.label33);
+            this.gbDetails.Controls.Add(this.label32);
+            this.gbDetails.Controls.Add(this.label1);
+            this.gbDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbDetails.Location = new System.Drawing.Point(223, 310);
+            this.gbDetails.Name = "gbDetails";
+            this.gbDetails.Size = new System.Drawing.Size(341, 155);
+            this.gbDetails.TabIndex = 29;
+            this.gbDetails.TabStop = false;
+            this.gbDetails.Text = "Selected Details:";
+            // 
+            // lblDate_Shifts
+            // 
+            this.lblDate_Shifts.AccessibleRole = System.Windows.Forms.AccessibleRole.TitleBar;
+            this.lblDate_Shifts.AutoSize = true;
+            this.lblDate_Shifts.Font = new System.Drawing.Font("Arial", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDate_Shifts.Location = new System.Drawing.Point(120, 124);
+            this.lblDate_Shifts.Name = "lblDate_Shifts";
+            this.lblDate_Shifts.Size = new System.Drawing.Size(16, 21);
+            this.lblDate_Shifts.TabIndex = 33;
+            this.lblDate_Shifts.Text = "-";
+            // 
+            // lblDepartment_Shifts
+            // 
+            this.lblDepartment_Shifts.AccessibleRole = System.Windows.Forms.AccessibleRole.TitleBar;
+            this.lblDepartment_Shifts.AutoSize = true;
+            this.lblDepartment_Shifts.Font = new System.Drawing.Font("Arial", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDepartment_Shifts.Location = new System.Drawing.Point(120, 55);
+            this.lblDepartment_Shifts.Name = "lblDepartment_Shifts";
+            this.lblDepartment_Shifts.Size = new System.Drawing.Size(16, 21);
+            this.lblDepartment_Shifts.TabIndex = 32;
+            this.lblDepartment_Shifts.Text = "-";
+            // 
+            // lblEmployee_Shifts
+            // 
+            this.lblEmployee_Shifts.AccessibleRole = System.Windows.Forms.AccessibleRole.TitleBar;
+            this.lblEmployee_Shifts.AutoSize = true;
+            this.lblEmployee_Shifts.Font = new System.Drawing.Font("Arial", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmployee_Shifts.Location = new System.Drawing.Point(120, 23);
+            this.lblEmployee_Shifts.Name = "lblEmployee_Shifts";
+            this.lblEmployee_Shifts.Size = new System.Drawing.Size(16, 21);
+            this.lblEmployee_Shifts.TabIndex = 31;
+            this.lblEmployee_Shifts.Text = "-";
+            // 
+            // lblShiftType_Shifts
+            // 
+            this.lblShiftType_Shifts.AccessibleRole = System.Windows.Forms.AccessibleRole.TitleBar;
+            this.lblShiftType_Shifts.AutoSize = true;
+            this.lblShiftType_Shifts.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblShiftType_Shifts.Location = new System.Drawing.Point(120, 90);
+            this.lblShiftType_Shifts.Name = "lblShiftType_Shifts";
+            this.lblShiftType_Shifts.Size = new System.Drawing.Size(92, 26);
+            this.lblShiftType_Shifts.TabIndex = 30;
+            this.lblShiftType_Shifts.Text = "Morning";
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label34.Location = new System.Drawing.Point(14, 124);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(53, 22);
+            this.label34.TabIndex = 29;
+            this.label34.Text = "Date:";
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label33.Location = new System.Drawing.Point(14, 55);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(108, 22);
+            this.label33.TabIndex = 28;
+            this.label33.Text = "Department:";
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label32.Location = new System.Drawing.Point(14, 22);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(94, 22);
+            this.label32.TabIndex = 27;
+            this.label32.Text = "Employee:";
+            // 
+            // label1
+            // 
+            this.label1.AccessibleRole = System.Windows.Forms.AccessibleRole.TitleBar;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(14, 90);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(90, 22);
+            this.label1.TabIndex = 26;
+            this.label1.Text = "Shift type:";
+            // 
+            // btnRemoveShift
+            // 
+            this.btnRemoveShift.BackColor = System.Drawing.Color.Salmon;
+            this.btnRemoveShift.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRemoveShift.Location = new System.Drawing.Point(570, 408);
+            this.btnRemoveShift.Name = "btnRemoveShift";
+            this.btnRemoveShift.Size = new System.Drawing.Size(298, 57);
+            this.btnRemoveShift.TabIndex = 28;
+            this.btnRemoveShift.Text = "Remove Shift";
+            this.btnRemoveShift.UseVisualStyleBackColor = false;
+            this.btnRemoveShift.Click += new System.EventHandler(this.btnRemoveShift_Click);
+            // 
+            // gbFilterDate
+            // 
+            this.gbFilterDate.BackColor = System.Drawing.Color.SeaShell;
+            this.gbFilterDate.Controls.Add(this.btnFilterDate_Shifts);
+            this.gbFilterDate.Controls.Add(this.label42);
+            this.gbFilterDate.Controls.Add(this.dtPickerFrom_Shifts);
+            this.gbFilterDate.Controls.Add(this.label43);
+            this.gbFilterDate.Controls.Add(this.dtPickerTo_Shifts);
+            this.gbFilterDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbFilterDate.Location = new System.Drawing.Point(668, 29);
+            this.gbFilterDate.Name = "gbFilterDate";
+            this.gbFilterDate.Size = new System.Drawing.Size(200, 242);
+            this.gbFilterDate.TabIndex = 27;
+            this.gbFilterDate.TabStop = false;
+            this.gbFilterDate.Text = "Filter By Date";
+            // 
+            // btnFilterDate_Shifts
+            // 
+            this.btnFilterDate_Shifts.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnFilterDate_Shifts.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFilterDate_Shifts.Location = new System.Drawing.Point(15, 172);
+            this.btnFilterDate_Shifts.Name = "btnFilterDate_Shifts";
+            this.btnFilterDate_Shifts.Size = new System.Drawing.Size(176, 59);
+            this.btnFilterDate_Shifts.TabIndex = 30;
+            this.btnFilterDate_Shifts.Text = "Filter Dates";
+            this.btnFilterDate_Shifts.UseVisualStyleBackColor = false;
+            this.btnFilterDate_Shifts.Click += new System.EventHandler(this.btnFilterDate_Shifts_Click);
+            // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label42.Location = new System.Drawing.Point(6, 31);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(51, 22);
+            this.label42.TabIndex = 23;
+            this.label42.Text = "From\r\n";
+            // 
+            // dtPickerFrom_Shifts
+            // 
+            this.dtPickerFrom_Shifts.CustomFormat = "";
+            this.dtPickerFrom_Shifts.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtPickerFrom_Shifts.Location = new System.Drawing.Point(10, 56);
+            this.dtPickerFrom_Shifts.Name = "dtPickerFrom_Shifts";
+            this.dtPickerFrom_Shifts.Size = new System.Drawing.Size(166, 28);
+            this.dtPickerFrom_Shifts.TabIndex = 21;
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label43.Location = new System.Drawing.Point(11, 103);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(25, 22);
+            this.label43.TabIndex = 24;
+            this.label43.Text = "to";
+            // 
+            // dtPickerTo_Shifts
+            // 
+            this.dtPickerTo_Shifts.CustomFormat = "";
+            this.dtPickerTo_Shifts.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtPickerTo_Shifts.Location = new System.Drawing.Point(10, 128);
+            this.dtPickerTo_Shifts.Name = "dtPickerTo_Shifts";
+            this.dtPickerTo_Shifts.Size = new System.Drawing.Size(166, 28);
+            this.dtPickerTo_Shifts.TabIndex = 25;
+            // 
+            // lbEmployees_Shifts
+            // 
+            this.lbEmployees_Shifts.FormattingEnabled = true;
+            this.lbEmployees_Shifts.ItemHeight = 20;
+            this.lbEmployees_Shifts.Location = new System.Drawing.Point(10, 301);
+            this.lbEmployees_Shifts.Name = "lbEmployees_Shifts";
+            this.lbEmployees_Shifts.Size = new System.Drawing.Size(207, 164);
+            this.lbEmployees_Shifts.TabIndex = 26;
+            this.lbEmployees_Shifts.SelectedIndexChanged += new System.EventHandler(this.lbEmployees_Shifts_SelectedIndexChanged);
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label38.Location = new System.Drawing.Point(6, 278);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(146, 20);
+            this.label38.TabIndex = 23;
+            this.label38.Text = "Select employee:";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.Location = new System.Drawing.Point(232, 283);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(109, 20);
+            this.label26.TabIndex = 6;
+            this.label26.Text = "Select Date:";
+            // 
+            // dtPicker_Shifts
+            // 
+            this.dtPicker_Shifts.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtPicker_Shifts.Location = new System.Drawing.Point(358, 278);
+            this.dtPicker_Shifts.Name = "dtPicker_Shifts";
+            this.dtPicker_Shifts.Size = new System.Drawing.Size(149, 26);
+            this.dtPicker_Shifts.TabIndex = 13;
+            this.dtPicker_Shifts.ValueChanged += new System.EventHandler(this.dtPicker_Shifts_ValueChanged);
             // 
             // tcShifts
             // 
             this.tcShifts.Controls.Add(this.tpMorning);
             this.tcShifts.Controls.Add(this.tpAfternoon);
             this.tcShifts.Controls.Add(this.tpEvening);
-            this.tcShifts.Location = new System.Drawing.Point(3, 3);
+            this.tcShifts.Location = new System.Drawing.Point(3, 0);
             this.tcShifts.Name = "tcShifts";
             this.tcShifts.SelectedIndex = 0;
-            this.tcShifts.Size = new System.Drawing.Size(676, 384);
+            this.tcShifts.Size = new System.Drawing.Size(659, 275);
             this.tcShifts.TabIndex = 20;
+            this.tcShifts.SelectedIndexChanged += new System.EventHandler(this.tcShifts_SelectedIndexChanged);
             // 
             // tpMorning
             // 
-            this.tpMorning.Controls.Add(this.textBox12);
-            this.tpMorning.Controls.Add(this.label38);
-            this.tpMorning.Controls.Add(this.label37);
-            this.tpMorning.Controls.Add(this.label34);
-            this.tpMorning.Controls.Add(this.comboBox10);
             this.tpMorning.Controls.Add(this.gbMorning);
-            this.tpMorning.Controls.Add(this.dateTimePicker6);
             this.tpMorning.Location = new System.Drawing.Point(4, 29);
             this.tpMorning.Name = "tpMorning";
             this.tpMorning.Padding = new System.Windows.Forms.Padding(3);
-            this.tpMorning.Size = new System.Drawing.Size(668, 351);
+            this.tpMorning.Size = new System.Drawing.Size(651, 242);
             this.tpMorning.TabIndex = 0;
             this.tpMorning.Text = "Morning Shifts";
             this.tpMorning.UseVisualStyleBackColor = true;
-            // 
-            // textBox12
-            // 
-            this.textBox12.Location = new System.Drawing.Point(358, 302);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(173, 26);
-            this.textBox12.TabIndex = 22;
-            // 
-            // label38
-            // 
-            this.label38.AutoSize = true;
-            this.label38.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label38.Location = new System.Drawing.Point(354, 279);
-            this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(188, 20);
-            this.label38.TabIndex = 21;
-            this.label38.Text = "Enter employee name:";
-            // 
-            // label37
-            // 
-            this.label37.AutoSize = true;
-            this.label37.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label37.Location = new System.Drawing.Point(173, 280);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(165, 20);
-            this.label37.TabIndex = 21;
-            this.label37.Text = "Select Department:";
-            // 
-            // label34
-            // 
-            this.label34.AutoSize = true;
-            this.label34.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label34.Location = new System.Drawing.Point(18, 281);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(109, 20);
-            this.label34.TabIndex = 21;
-            this.label34.Text = "Select Date:";
-            // 
-            // comboBox10
-            // 
-            this.comboBox10.FormattingEnabled = true;
-            this.comboBox10.Location = new System.Drawing.Point(177, 302);
-            this.comboBox10.Name = "comboBox10";
-            this.comboBox10.Size = new System.Drawing.Size(140, 28);
-            this.comboBox10.TabIndex = 22;
             // 
             // gbMorning
             // 
@@ -972,15 +1075,15 @@
             this.gbMorning.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbMorning.Location = new System.Drawing.Point(3, 6);
             this.gbMorning.Name = "gbMorning";
-            this.gbMorning.Size = new System.Drawing.Size(659, 272);
+            this.gbMorning.Size = new System.Drawing.Size(645, 231);
             this.gbMorning.TabIndex = 10;
             this.gbMorning.TabStop = false;
             this.gbMorning.Text = "Morning (9:00-13:00)";
             // 
             // lvMorning
             // 
-            this.lvMorning.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.lvMorning.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lvMorning.BackColor = System.Drawing.Color.LightGreen;
             this.lvMorning.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
@@ -994,7 +1097,7 @@
             this.lvMorning.HideSelection = false;
             this.lvMorning.Location = new System.Drawing.Point(6, 25);
             this.lvMorning.Name = "lvMorning";
-            this.lvMorning.Size = new System.Drawing.Size(647, 241);
+            this.lvMorning.Size = new System.Drawing.Size(633, 200);
             this.lvMorning.TabIndex = 8;
             this.lvMorning.UseCompatibleStateImageBehavior = false;
             this.lvMorning.View = System.Windows.Forms.View.Details;
@@ -1006,128 +1109,63 @@
             // 
             // columnHeader2
             // 
-            this.columnHeader2.Text = "Electrical";
+            this.columnHeader2.Text = "Electronics";
             this.columnHeader2.Width = 92;
             // 
             // columnHeader3
             // 
             this.columnHeader3.Text = "Cleaning";
-            this.columnHeader3.Width = 89;
+            this.columnHeader3.Width = 105;
             // 
             // columnHeader4
             // 
-            this.columnHeader4.Text = "Automotive";
+            this.columnHeader4.Text = "Gardening";
             this.columnHeader4.Width = 103;
-            // 
-            // dateTimePicker6
-            // 
-            this.dateTimePicker6.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker6.Location = new System.Drawing.Point(22, 304);
-            this.dateTimePicker6.Name = "dateTimePicker6";
-            this.dateTimePicker6.Size = new System.Drawing.Size(124, 26);
-            this.dateTimePicker6.TabIndex = 22;
             // 
             // tpAfternoon
             // 
-            this.tpAfternoon.Controls.Add(this.textBox11);
-            this.tpAfternoon.Controls.Add(this.label36);
-            this.tpAfternoon.Controls.Add(this.label35);
-            this.tpAfternoon.Controls.Add(this.label33);
-            this.tpAfternoon.Controls.Add(this.comboBox9);
             this.tpAfternoon.Controls.Add(this.groupBox5);
-            this.tpAfternoon.Controls.Add(this.dateTimePicker5);
             this.tpAfternoon.Location = new System.Drawing.Point(4, 29);
             this.tpAfternoon.Name = "tpAfternoon";
             this.tpAfternoon.Padding = new System.Windows.Forms.Padding(3);
-            this.tpAfternoon.Size = new System.Drawing.Size(668, 351);
+            this.tpAfternoon.Size = new System.Drawing.Size(651, 242);
             this.tpAfternoon.TabIndex = 1;
             this.tpAfternoon.Text = "Afternoon Shifts";
             this.tpAfternoon.UseVisualStyleBackColor = true;
             // 
-            // textBox11
-            // 
-            this.textBox11.Location = new System.Drawing.Point(339, 302);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(163, 26);
-            this.textBox11.TabIndex = 22;
-            // 
-            // label36
-            // 
-            this.label36.AutoSize = true;
-            this.label36.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label36.Location = new System.Drawing.Point(335, 279);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(188, 20);
-            this.label36.TabIndex = 21;
-            this.label36.Text = "Enter employee name:";
-            // 
-            // label35
-            // 
-            this.label35.AutoSize = true;
-            this.label35.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label35.Location = new System.Drawing.Point(162, 280);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(165, 20);
-            this.label35.TabIndex = 21;
-            this.label35.Text = "Select Department:";
-            // 
-            // label33
-            // 
-            this.label33.AutoSize = true;
-            this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label33.Location = new System.Drawing.Point(18, 281);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(109, 20);
-            this.label33.TabIndex = 21;
-            this.label33.Text = "Select Date:";
-            // 
-            // comboBox9
-            // 
-            this.comboBox9.FormattingEnabled = true;
-            this.comboBox9.Location = new System.Drawing.Point(166, 302);
-            this.comboBox9.Name = "comboBox9";
-            this.comboBox9.Size = new System.Drawing.Size(161, 28);
-            this.comboBox9.TabIndex = 22;
-            // 
             // groupBox5
             // 
             this.groupBox5.BackColor = System.Drawing.Color.NavajoWhite;
-            this.groupBox5.Controls.Add(this.listView3);
+            this.groupBox5.Controls.Add(this.lvAfternoon);
             this.groupBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox5.Location = new System.Drawing.Point(6, 6);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(656, 272);
+            this.groupBox5.Size = new System.Drawing.Size(639, 229);
             this.groupBox5.TabIndex = 11;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Afternoon (13:00 - 17:00)";
             // 
-            // listView3
+            // lvAfternoon
             // 
-            this.listView3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.lvAfternoon.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.listView3.BackColor = System.Drawing.Color.LightGreen;
-            this.listView3.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.lvAfternoon.BackColor = System.Drawing.Color.LightGreen;
+            this.lvAfternoon.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader9,
             this.columnHeader10,
             this.columnHeader11,
             this.columnHeader12});
-            this.listView3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listView3.FullRowSelect = true;
-            this.listView3.GridLines = true;
-            this.listView3.HideSelection = false;
-            this.listView3.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem51,
-            listViewItem52,
-            listViewItem53,
-            listViewItem54,
-            listViewItem55});
-            this.listView3.Location = new System.Drawing.Point(6, 25);
-            this.listView3.Name = "listView3";
-            this.listView3.Size = new System.Drawing.Size(644, 241);
-            this.listView3.TabIndex = 8;
-            this.listView3.UseCompatibleStateImageBehavior = false;
-            this.listView3.View = System.Windows.Forms.View.Details;
+            this.lvAfternoon.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lvAfternoon.FullRowSelect = true;
+            this.lvAfternoon.GridLines = true;
+            this.lvAfternoon.HideSelection = false;
+            this.lvAfternoon.Location = new System.Drawing.Point(6, 25);
+            this.lvAfternoon.Name = "lvAfternoon";
+            this.lvAfternoon.Size = new System.Drawing.Size(627, 198);
+            this.lvAfternoon.TabIndex = 8;
+            this.lvAfternoon.UseCompatibleStateImageBehavior = false;
+            this.lvAfternoon.View = System.Windows.Forms.View.Details;
             // 
             // columnHeader9
             // 
@@ -1136,7 +1174,7 @@
             // 
             // columnHeader10
             // 
-            this.columnHeader10.Text = "Electrical";
+            this.columnHeader10.Text = "Electronics";
             this.columnHeader10.Width = 92;
             // 
             // columnHeader11
@@ -1146,90 +1184,53 @@
             // 
             // columnHeader12
             // 
-            this.columnHeader12.Text = "Automotive";
+            this.columnHeader12.Text = "Gardening";
             this.columnHeader12.Width = 103;
-            // 
-            // dateTimePicker5
-            // 
-            this.dateTimePicker5.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker5.Location = new System.Drawing.Point(22, 304);
-            this.dateTimePicker5.Name = "dateTimePicker5";
-            this.dateTimePicker5.Size = new System.Drawing.Size(124, 26);
-            this.dateTimePicker5.TabIndex = 22;
             // 
             // tpEvening
             // 
-            this.tpEvening.Controls.Add(this.textBox10);
-            this.tpEvening.Controls.Add(this.label32);
             this.tpEvening.Controls.Add(this.groupBox6);
-            this.tpEvening.Controls.Add(this.label26);
-            this.tpEvening.Controls.Add(this.dateTimePicker3);
-            this.tpEvening.Controls.Add(this.label28);
-            this.tpEvening.Controls.Add(this.comboBox7);
             this.tpEvening.Location = new System.Drawing.Point(4, 29);
             this.tpEvening.Name = "tpEvening";
             this.tpEvening.Padding = new System.Windows.Forms.Padding(3);
-            this.tpEvening.Size = new System.Drawing.Size(668, 351);
+            this.tpEvening.Size = new System.Drawing.Size(651, 242);
             this.tpEvening.TabIndex = 2;
             this.tpEvening.Text = "Evening Shifts";
             this.tpEvening.UseVisualStyleBackColor = true;
             // 
-            // textBox10
-            // 
-            this.textBox10.Location = new System.Drawing.Point(336, 304);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(169, 26);
-            this.textBox10.TabIndex = 22;
-            // 
-            // label32
-            // 
-            this.label32.AutoSize = true;
-            this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label32.Location = new System.Drawing.Point(332, 281);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(188, 20);
-            this.label32.TabIndex = 21;
-            this.label32.Text = "Enter employee name:";
-            // 
             // groupBox6
             // 
             this.groupBox6.BackColor = System.Drawing.Color.DarkSalmon;
-            this.groupBox6.Controls.Add(this.listView2);
+            this.groupBox6.Controls.Add(this.lvEvening);
             this.groupBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox6.Location = new System.Drawing.Point(6, 6);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(656, 272);
+            this.groupBox6.Size = new System.Drawing.Size(639, 230);
             this.groupBox6.TabIndex = 12;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Evening (17:00-21:00)";
             // 
-            // listView2
+            // lvEvening
             // 
-            this.listView2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.lvEvening.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.listView2.BackColor = System.Drawing.Color.LightGreen;
-            this.listView2.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.lvEvening.BackColor = System.Drawing.Color.LightGreen;
+            this.lvEvening.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader5,
             this.columnHeader6,
             this.columnHeader7,
             this.columnHeader8});
-            this.listView2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listView2.FullRowSelect = true;
-            this.listView2.GridLines = true;
-            this.listView2.HideSelection = false;
-            this.listView2.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem56,
-            listViewItem57,
-            listViewItem58,
-            listViewItem59,
-            listViewItem60});
-            this.listView2.Location = new System.Drawing.Point(6, 25);
-            this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(644, 241);
-            this.listView2.TabIndex = 8;
-            this.listView2.UseCompatibleStateImageBehavior = false;
-            this.listView2.View = System.Windows.Forms.View.Details;
+            this.lvEvening.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lvEvening.FullRowSelect = true;
+            this.lvEvening.GridLines = true;
+            this.lvEvening.HideSelection = false;
+            this.lvEvening.Location = new System.Drawing.Point(6, 25);
+            this.lvEvening.Name = "lvEvening";
+            this.lvEvening.Size = new System.Drawing.Size(627, 199);
+            this.lvEvening.TabIndex = 8;
+            this.lvEvening.UseCompatibleStateImageBehavior = false;
+            this.lvEvening.View = System.Windows.Forms.View.Details;
             // 
             // columnHeader5
             // 
@@ -1238,7 +1239,7 @@
             // 
             // columnHeader6
             // 
-            this.columnHeader6.Text = "Electrical";
+            this.columnHeader6.Text = "Electronics";
             this.columnHeader6.Width = 92;
             // 
             // columnHeader7
@@ -1248,54 +1249,20 @@
             // 
             // columnHeader8
             // 
-            this.columnHeader8.Text = "Automotive";
+            this.columnHeader8.Text = "Gardening";
             this.columnHeader8.Width = 103;
             // 
-            // label26
+            // btnAssignShift
             // 
-            this.label26.AutoSize = true;
-            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.Location = new System.Drawing.Point(8, 281);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(109, 20);
-            this.label26.TabIndex = 6;
-            this.label26.Text = "Select Date:";
-            // 
-            // dateTimePicker3
-            // 
-            this.dateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker3.Location = new System.Drawing.Point(12, 304);
-            this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(117, 26);
-            this.dateTimePicker3.TabIndex = 13;
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.Location = new System.Drawing.Point(156, 282);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(165, 20);
-            this.label28.TabIndex = 16;
-            this.label28.Text = "Select Department:";
-            // 
-            // comboBox7
-            // 
-            this.comboBox7.FormattingEnabled = true;
-            this.comboBox7.Location = new System.Drawing.Point(160, 304);
-            this.comboBox7.Name = "comboBox7";
-            this.comboBox7.Size = new System.Drawing.Size(161, 28);
-            this.comboBox7.TabIndex = 17;
-            // 
-            // btnUpdateShifts
-            // 
-            this.btnUpdateShifts.Location = new System.Drawing.Point(701, 164);
-            this.btnUpdateShifts.Name = "btnUpdateShifts";
-            this.btnUpdateShifts.Size = new System.Drawing.Size(140, 74);
-            this.btnUpdateShifts.TabIndex = 9;
-            this.btnUpdateShifts.Text = "Update Info";
-            this.btnUpdateShifts.UseVisualStyleBackColor = true;
-            this.btnUpdateShifts.Click += new System.EventHandler(this.btnUpdateShifts_Click);
+            this.btnAssignShift.BackColor = System.Drawing.Color.LightGreen;
+            this.btnAssignShift.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAssignShift.Location = new System.Drawing.Point(570, 277);
+            this.btnAssignShift.Name = "btnAssignShift";
+            this.btnAssignShift.Size = new System.Drawing.Size(298, 125);
+            this.btnAssignShift.TabIndex = 9;
+            this.btnAssignShift.Text = "Assign Shift";
+            this.btnAssignShift.UseVisualStyleBackColor = false;
+            this.btnAssignShift.Click += new System.EventHandler(this.btnAssignShift_Click);
             // 
             // tpCalendar
             // 
@@ -1316,7 +1283,7 @@
             this.tpCalendar.Location = new System.Drawing.Point(4, 29);
             this.tpCalendar.Name = "tpCalendar";
             this.tpCalendar.Padding = new System.Windows.Forms.Padding(3);
-            this.tpCalendar.Size = new System.Drawing.Size(869, 468);
+            this.tpCalendar.Size = new System.Drawing.Size(879, 480);
             this.tpCalendar.TabIndex = 3;
             this.tpCalendar.Text = "Statistics";
             this.tpCalendar.UseVisualStyleBackColor = true;
@@ -1459,12 +1426,11 @@
             // 
             // lvStats
             // 
-            this.lvStats.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.lvStats.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lvStats.BackColor = System.Drawing.Color.LightGreen;
             this.lvStats.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader13,
             this.columnHeader14,
             this.columnHeader15,
             this.columnHeader16});
@@ -1473,16 +1439,11 @@
             this.lvStats.HideSelection = false;
             this.lvStats.Location = new System.Drawing.Point(6, 15);
             this.lvStats.Name = "lvStats";
-            this.lvStats.Size = new System.Drawing.Size(437, 402);
+            this.lvStats.Size = new System.Drawing.Size(447, 414);
             this.lvStats.TabIndex = 7;
             this.lvStats.UseCompatibleStateImageBehavior = false;
             this.lvStats.View = System.Windows.Forms.View.Details;
             this.lvStats.SelectedIndexChanged += new System.EventHandler(this.lvStats_SelectedIndexChanged);
-            // 
-            // columnHeader13
-            // 
-            this.columnHeader13.Text = "ID";
-            this.columnHeader13.Width = 59;
             // 
             // columnHeader14
             // 
@@ -1567,7 +1528,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SeaShell;
-            this.ClientSize = new System.Drawing.Size(905, 552);
+            this.ClientSize = new System.Drawing.Size(905, 571);
             this.Controls.Add(this.lblMusicService);
             this.Controls.Add(this.lblYourFavs);
             this.Controls.Add(this.tabControl2);
@@ -1590,15 +1551,17 @@
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.tabAssignShifts.ResumeLayout(false);
+            this.tabAssignShifts.PerformLayout();
+            this.gbDetails.ResumeLayout(false);
+            this.gbDetails.PerformLayout();
+            this.gbFilterDate.ResumeLayout(false);
+            this.gbFilterDate.PerformLayout();
             this.tcShifts.ResumeLayout(false);
             this.tpMorning.ResumeLayout(false);
-            this.tpMorning.PerformLayout();
             this.gbMorning.ResumeLayout(false);
             this.tpAfternoon.ResumeLayout(false);
-            this.tpAfternoon.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.tpEvening.ResumeLayout(false);
-            this.tpEvening.PerformLayout();
             this.groupBox6.ResumeLayout(false);
             this.tpCalendar.ResumeLayout(false);
             this.tpCalendar.PerformLayout();
@@ -1623,20 +1586,19 @@
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.ListView listView2;
+        private System.Windows.Forms.ListView lvEvening;
         private System.Windows.Forms.ColumnHeader columnHeader5;
         private System.Windows.Forms.ColumnHeader columnHeader6;
         private System.Windows.Forms.ColumnHeader columnHeader7;
         private System.Windows.Forms.ColumnHeader columnHeader8;
         private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.ListView listView3;
+        private System.Windows.Forms.ListView lvAfternoon;
         private System.Windows.Forms.ColumnHeader columnHeader9;
         private System.Windows.Forms.ColumnHeader columnHeader10;
         private System.Windows.Forms.ColumnHeader columnHeader11;
         private System.Windows.Forms.ColumnHeader columnHeader12;
         private System.Windows.Forms.GroupBox gbMorning;
         private System.Windows.Forms.ListView lvStats;
-        private System.Windows.Forms.ColumnHeader columnHeader13;
         private System.Windows.Forms.ColumnHeader columnHeader14;
         private System.Windows.Forms.ColumnHeader columnHeader15;
         private System.Windows.Forms.ColumnHeader columnHeader16;
@@ -1645,29 +1607,13 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox cbxMonth;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button btnUpdateShifts;
-        private System.Windows.Forms.DateTimePicker dateTimePicker3;
-        private System.Windows.Forms.ComboBox comboBox7;
-        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Button btnAssignShift;
+        private System.Windows.Forms.DateTimePicker dtPicker_Shifts;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.TabControl tcShifts;
         private System.Windows.Forms.TabPage tpMorning;
-        private System.Windows.Forms.TextBox textBox12;
-        private System.Windows.Forms.Label label38;
-        private System.Windows.Forms.Label label37;
-        private System.Windows.Forms.Label label34;
-        private System.Windows.Forms.ComboBox comboBox10;
-        private System.Windows.Forms.DateTimePicker dateTimePicker6;
         private System.Windows.Forms.TabPage tpAfternoon;
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.Label label36;
-        private System.Windows.Forms.Label label35;
-        private System.Windows.Forms.Label label33;
-        private System.Windows.Forms.ComboBox comboBox9;
-        private System.Windows.Forms.DateTimePicker dateTimePicker5;
         private System.Windows.Forms.TabPage tpEvening;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.Label label32;
         private System.Windows.Forms.Label lblEvening;
         private System.Windows.Forms.Label lblAfternoon;
         private System.Windows.Forms.Label lblMorning;
@@ -1688,8 +1634,6 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox tbEmployeeID;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.TextBox tbContactPhone;
         private System.Windows.Forms.TextBox tbContactName;
@@ -1712,8 +1656,6 @@
         private System.Windows.Forms.TextBox tbInsContactName;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.TextBox tbInsEmployeeID;
-        private System.Windows.Forms.Label label17;
         private System.Windows.Forms.RichTextBox tbInsAddress;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label19;
@@ -1735,11 +1677,28 @@
         private System.Windows.Forms.Label label41;
         private System.Windows.Forms.Button btnRemoveEmployee;
         private System.Windows.Forms.ListView lvAllEmployees;
-        private System.Windows.Forms.ColumnHeader chID;
         private System.Windows.Forms.ColumnHeader chName;
         private System.Windows.Forms.ColumnHeader chPosition;
         private System.Windows.Forms.ColumnHeader chDepartment;
         private System.Windows.Forms.Button btnAddEmployee;
+        private System.Windows.Forms.DateTimePicker dtPickerFrom_Shifts;
+        private System.Windows.Forms.Label label42;
+        private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.DateTimePicker dtPickerTo_Shifts;
+        private System.Windows.Forms.Label label43;
+        private System.Windows.Forms.GroupBox gbFilterDate;
+        private System.Windows.Forms.ListBox lbEmployees_Shifts;
+        private System.Windows.Forms.Button btnRemoveShift;
+        private System.Windows.Forms.GroupBox gbDetails;
+        private System.Windows.Forms.Label lblDate_Shifts;
+        private System.Windows.Forms.Label lblDepartment_Shifts;
+        private System.Windows.Forms.Label lblEmployee_Shifts;
+        private System.Windows.Forms.Label lblShiftType_Shifts;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnFilterDate_Shifts;
     }
 }
 

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace StreamingMusicService
+namespace MediaBazaarSolution
 {
     static class Program
     {
@@ -16,7 +16,7 @@ namespace StreamingMusicService
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new EmployeeManagement());
+            Application.Run(new DepartmentManagement());
         }
     }
 }

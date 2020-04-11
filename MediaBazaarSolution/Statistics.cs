@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StreamingMusicService
+namespace MediaBazaarSolution
 {
     public class Statistics
     {
@@ -25,9 +25,9 @@ namespace StreamingMusicService
         public string[] GetDetails()
         {
             string[] details = new string[3];
-            details[0] = firstName;
-            details[1] = position;
-            details[2] = department;
+            //details[0] = firstName;
+            details[0] = position;
+            details[1] = department;
             return details;
         }
         public override string ToString()

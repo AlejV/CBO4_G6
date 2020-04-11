@@ -8,16 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace StreamingMusicService
+namespace MediaBazaarSolution
 {
-    public partial class DepartmentManagement : Form
+    public partial class Stocks : Form
     {
-        public DepartmentManagement()
+        public Stocks()
         {
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

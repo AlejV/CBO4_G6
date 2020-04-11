@@ -1,4 +1,4 @@
-﻿namespace StreamingMusicService
+﻿namespace MediaBazaarSolution
 {
     partial class Stocks
     {

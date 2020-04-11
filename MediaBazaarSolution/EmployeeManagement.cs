@@ -10,10 +10,11 @@ using System.Windows.Forms;
 using MySql.Data;
 using MySql.Data.MySqlClient;
 using System.Threading;
+using System.Globalization;
 
-namespace StreamingMusicService
+namespace MediaBazaarSolution
 {
-    //comment for test git
+    
     public partial class EmployeeManagement : Form
     {
         MySqlConnection conn = new MySqlConnection("server=studmysql01.fhict.local;database=dbi400999;uid=dbi400999;password=Group6Project;");
@@ -66,6 +67,7 @@ namespace StreamingMusicService
         {
             stats.Clear();
             lvStats.Items.Clear();
+            lbEmployees_Shifts.Items.Clear();
             for (int i = 0; i < allEmployees.Count; i++)
             {
                 //string[] row = allEmployees[i].GetDetails();
@@ -78,7 +80,9 @@ namespace StreamingMusicService
             for (int i = 0; i < stats.Count; i++)
             {
                 string[] row = stats[i].GetDetails();
-                lvStats.Items.Add(stats[i].id.ToString()).SubItems.AddRange(row);
+                lvStats.Items.Add(stats[i].firstName.ToString()).SubItems.AddRange(row);
+                lbEmployees_Shifts.Items.Add(stats[i].firstName.ToString());
+                lbEmployees_Shifts.SelectedIndex = 0;
             }
         }
         void LoadAllEmployees()
@@ -97,25 +101,21 @@ namespace StreamingMusicService
             for (int i = 0; i < allEmployees.Count; i++)
             {
                 string[] row = allEmployees[i].GetDetails();
-                    lvAllEmployees.Items.Add(allEmployees[i].id.ToString()).SubItems.AddRange(row); 
+                    lvAllEmployees.Items.Add(allEmployees[i].firstName.ToString()).SubItems.AddRange(row); 
                 //lvStats.Items.Add(stats[i].id.ToString()).SubItems.AddRange(row);
             }
             conn.Close();
         }
-        private void btnUpdateShifts_Click(object sender, EventArgs e)
-        {
-
-        }
         
         private void EmployeeManagement_Load(object sender, EventArgs e)
         {
+            RefreshDate(); //updates the date label in the shifts management
             comboBox1.Items.Add("Manager");
             comboBox1.Items.Add("Administrator");
             comboBox1.Items.Add("Employee");
             cbxInsPosition.Items.Add("Manager");
             cbxInsPosition.Items.Add("Administrator");
             cbxInsPosition.Items.Add("Employee");
-
             var connectionString = "Server=studmysql01.fhict.local;Uid=dbi400999;Database=dbi400999;Pwd=Group6Project;";
             using (var connection = new MySqlConnection(connectionString))
             {
@@ -128,32 +128,13 @@ namespace StreamingMusicService
                         //Iterate through the rows and add it to the combobox's items
                         while (reader.Read())
                         {
-                            comboBox10.Items.Add(reader.GetString("departmentName"));
+                            cbxInsDepartment.Items.Add(reader.GetString("departmentName"));
                             comboBox2.Items.Add(reader.GetString("departmentName"));
-
+                            //cbxDepartment_Shifts.Items.Add(reader.GetString("departmentName"));
                         }
                     }
                 }
             }
-
-            //var connectionString = "Server=studmysql01.fhict.local;Uid=dbi400999;Database=dbi400999;Pwd=Group6Project;";
-            //using (var connection = new MySqlConnection(connectionString))
-            //{
-            //    connection.Open();
-            //    var query = "SELECT departmentName FROM department";
-            //    using (var command = new MySqlCommand(query, connection))
-            //    {
-            //        using (var reader = command.ExecuteReader())
-            //        {
-            //            //Iterate through the rows and add it to the combobox's items
-            //            while (reader.Read())
-            //            {
-            //                comboBox2.Items.Add(reader.GetString("departmentName"));
-            //                cbxInsDepartment.Items.Add(reader.GetString("departmentName"));
-            //            }
-            //        }
-            //    }
-            //}
             LoadAllEmployees();
             LoadStats();
             try
@@ -191,8 +172,8 @@ namespace StreamingMusicService
                 if (connection.State == ConnectionState.Open)
                 {
                     MessageBox.Show("Data entered succesfully.");
-                    MySqlCommand cmd = new MySqlCommand("INSERT INTO employee (employeeID, firstName, lastName, dateOfBirth, phone, address, contactFirstName, contactPhone, salary, position, departmentName) VALUES (@employeeID, @firstName, @lastName, @dateOfBirth, @phone, @address, @contactFirstName, @contactPhone, @salary, @position, @departmentName)", connection);
-                    cmd.Parameters.AddWithValue("@employeeID", Convert.ToInt32(tbEmployeeID.Text));
+                    MySqlCommand cmd = new MySqlCommand("INSERT INTO employee (firstName, lastName, dateOfBirth, phone, address, contactFirstName, contactPhone, salary, position, departmentName) VALUES (@firstName, @lastName, @dateOfBirth, @phone, @address, @contactFirstName, @contactPhone, @salary, @position, @departmentName)", connection);
+                    //cmd.Parameters.AddWithValue("@employeeID", Convert.ToInt32(tbEmployeeID.Text));
                     cmd.Parameters.AddWithValue("@firstName", Convert.ToString(tbUsername.Text));
                     cmd.Parameters.AddWithValue("@lastName", Convert.ToString(tbLastName.Text));
                     cmd.Parameters.AddWithValue("@dateOfBirth", Convert.ToDateTime(dateTimePicker1.Value));
@@ -203,7 +184,7 @@ namespace StreamingMusicService
                     cmd.Parameters.AddWithValue("@salary", Convert.ToDecimal(tbSalary.Text));
                     cmd.Parameters.AddWithValue("@position", Convert.ToString(comboBox1.SelectedItem));
                     cmd.Parameters.AddWithValue("@departmentName", Convert.ToString(comboBox2.SelectedItem));
-                    string[] row = { tbEmployeeID.Text, tbUsername.Text, Convert.ToString(comboBox1.SelectedItem), Convert.ToString(comboBox2.SelectedItem) };
+                    string[] row = { "tbEmployeeID.Text", tbUsername.Text, Convert.ToString(comboBox1.SelectedItem), Convert.ToString(comboBox2.SelectedItem) };
                     var listViewItem = new ListViewItem(row);
                     lvAllEmployees.Items.Add(listViewItem);
                     cmd.ExecuteNonQuery();
@@ -240,10 +221,12 @@ namespace StreamingMusicService
             conn.Open();
             int effectedRows = cmd.ExecuteNonQuery();
             conn.Close();
+
             lvAllEmployees.Items.Clear();
+            MessageBox.Show($"Employee with id {allEmployees[index].id.ToString()} removed");
             LoadAllEmployees();
             LoadStats();
-            MessageBox.Show($"Employee with id {allEmployees[index].id.ToString()} removed");
+            //MessageBox.Show($"Employee with id {allEmployees[index].id.ToString()} removed");
         }
 
         private void btnConfirmChanges_Click(object sender, EventArgs e)
@@ -252,7 +235,7 @@ namespace StreamingMusicService
             int index;
             index = lvAllEmployees.FocusedItem.Index;
 
-            int employeeId = Convert.ToInt32(tbInsEmployeeID.Text);
+            //int employeeId = Convert.ToInt32(tbInsEmployeeID.Text);
             string firstName = tbInsFirstName.Text;
             string lastName = tbInsLastName.Text;
             DateTime birthDate = Convert.ToDateTime(dateTimePickerIns.Value);
@@ -273,8 +256,7 @@ namespace StreamingMusicService
                 connection.Open();
                 if (connection.State == ConnectionState.Open)
                 {
-                    MySqlCommand cmd = new MySqlCommand($"UPDATE employee SET employeeID = @employeeID, firstName = @firstName, lastName = @lastName, dateOfBirth = @dateOfBirth, phone = @phone, address = @address, contactFirstName = @contactFirstName, contactPhone = @contactPhone, salary = @salary, position = @position, departmentName = @departmentName WHERE employeeID = {allEmployees[index].id}", connection);
-                    cmd.Parameters.AddWithValue("@employeeID", Convert.ToInt32(tbInsEmployeeID.Text));
+                    MySqlCommand cmd = new MySqlCommand($"UPDATE employee SET firstName = @firstName, lastName = @lastName, dateOfBirth = @dateOfBirth, phone = @phone, address = @address, contactFirstName = @contactFirstName, contactPhone = @contactPhone, salary = @salary, position = @position, departmentName = @departmentName WHERE employeeID = {allEmployees[index].id}", connection);
                     cmd.Parameters.AddWithValue("@firstName", Convert.ToString(tbInsFirstName.Text));
                     cmd.Parameters.AddWithValue("@lastName", Convert.ToString(tbInsLastName.Text));
                     cmd.Parameters.AddWithValue("@dateOfBirth", Convert.ToDateTime(dateTimePickerIns.Value));
@@ -286,22 +268,6 @@ namespace StreamingMusicService
                     cmd.Parameters.AddWithValue("@position", Convert.ToString(cbxInsPosition.SelectedItem));
                     cmd.Parameters.AddWithValue("@departmentName", Convert.ToString(cbxInsDepartment.SelectedItem));
                     cmd.ExecuteNonQuery();
-
-                    //string sql = $"UPDATE employee SET employeeID = {employeeId}, firstName = '{firstName}', lastName = '{lastName}' WHERE employeeID= {allEmployees[index].id};";
-                    //MySqlCommand cmd = new MySqlCommand(sql, this.conn);
-                    ////cmd.Parameters.AddWithValue("@userId", id); //int id = Convert.ToInt32(tbxId.Text);
-                    //conn.Open();
-                    //int effectedRows = cmd.ExecuteNonQuery();
-                    //conn.Close();
-
-                    //if (cmd.ExecuteNonQuery() == 1)
-                    //{
-                    //    MessageBox.Show("Information Edited Successfully!");
-                    //}
-                    //else
-                    //{
-                    //    MessageBox.Show("Can't edit information.");
-                    //}
                 }
             }
             catch (Exception ex)
@@ -309,12 +275,6 @@ namespace StreamingMusicService
                 MessageBox.Show(ex.ToString());
             }
             connection.Close();
-            //string sql = $"UPDATE employee SET lastName = '{lastName}' WHERE employeeID= {allEmployees[index].id};";
-            //MySqlCommand cmd = new MySqlCommand(sql, this.conn);
-            ////cmd.Parameters.AddWithValue("@userId", id); //int id = Convert.ToInt32(tbxId.Text);
-            //conn.Open();
-            //int effectedRows = cmd.ExecuteNonQuery();
-            //conn.Close();
             LoadAllEmployees();
             LoadStats();
         }
@@ -504,7 +464,7 @@ namespace StreamingMusicService
 
             while (dr.Read())
             {
-                tbInsEmployeeID.Text = dr[0].ToString();
+                //tbInsEmployeeID.Text = dr[0].ToString();
                 tbInsFirstName.Text = dr[1].ToString();
                 tbInsLastName.Text = dr[2].ToString();
                 dateTimePickerIns.Text = dr[3].ToString();
@@ -523,6 +483,191 @@ namespace StreamingMusicService
         private void lvAllEmployees_SelectedIndexChanged(object sender, EventArgs e)
         {
             LoadInsertTextboxes();
+        }
+
+                            //code for shifts starts here
+
+        void UpdateShiftsInfo()
+        {
+            int index;
+            index = lbEmployees_Shifts.SelectedIndex;
+            string employeeName, departmentName;
+            employeeName = stats[index].firstName;
+            departmentName = stats[index].department;
+            lblEmployee_Shifts.Text = employeeName;
+            lblDepartment_Shifts.Text = departmentName;
+
+            int indexTwo = tcShifts.SelectedIndex;
+            switch (indexTwo)
+            {
+                case 0:
+                    lblShiftType_Shifts.Text = "Morning";
+                    break;
+                case 1:
+                    lblShiftType_Shifts.Text = "Afternoon";
+                    break;
+                case 2:
+                    lblShiftType_Shifts.Text = "Evening";
+                    break;
+            }
+        }
+        private void lbEmployees_Shifts_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            UpdateShiftsInfo();
+        }
+
+        private void tcShifts_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            UpdateShiftsInfo();
+        }
+        void RefreshDate()
+        {
+            string date = dtPicker_Shifts.Value.ToString("yyyy-MM-dd");
+            lblDate_Shifts.Text = date;
+        }
+        private void dtPicker_Shifts_ValueChanged(object sender, EventArgs e)
+        {
+            RefreshDate();
+        }
+        string CheckShiftType()
+        {
+            int indexShiftType = tcShifts.SelectedIndex;
+            switch (indexShiftType)
+            {
+                case 0:
+                    return "morningshifts";
+                case 1:
+                    return "afternoonshifts";
+                default:
+                    return "eveningshifts";
+            }
+        }
+        string DateRange()
+        {
+            string dateFrom = dtPickerFrom_Shifts.Value.ToString("yyyy-MM-dd");
+            string dateTo = dtPickerTo_Shifts.Value.ToString("yyyy-MM-dd");
+            return $"'{dateFrom}' AND '{dateTo}'";
+        }
+        //update shifts info
+        void UpdateShiftsListView()
+        {
+            lvMorning.Items.Clear();
+            lvAfternoon.Items.Clear();
+            lvEvening.Items.Clear();
+
+            //query for morning shifts
+            string sql = $"SELECT * FROM morningshifts WHERE date BETWEEN {DateRange()};";
+            MySqlCommand cmd = new MySqlCommand(sql, this.conn);
+            conn.Open();
+            MySqlDataReader dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                string[] row = new string[3];
+                row[0] = dr[1].ToString();
+                row[1] = dr[2].ToString();
+                row[2] = dr[3].ToString();
+                DateTime dt = DateTime.ParseExact(dr[0].ToString(), "dd/MM/yyyy hh:mm:ss", CultureInfo.InvariantCulture);
+                string s = dt.ToString("dd-MM-yyyy", CultureInfo.InvariantCulture);
+                lvMorning.Items.Add(Convert.ToString(s)).SubItems.AddRange(row);
+            }
+            conn.Close();
+
+            //query for afternoon shifts
+            string sqlB = $"SELECT * FROM afternoonshifts WHERE date BETWEEN {DateRange()};";
+            MySqlCommand cmdB = new MySqlCommand(sqlB, this.conn);
+            conn.Open();
+            MySqlDataReader drB = cmdB.ExecuteReader();
+            while (drB.Read())
+            {
+                string[] row = new string[3];
+                row[0] = drB[1].ToString();
+                row[1] = drB[2].ToString();
+                row[2] = drB[3].ToString();
+                DateTime dt = DateTime.ParseExact(drB[0].ToString(), "dd/MM/yyyy hh:mm:ss", CultureInfo.InvariantCulture);
+                string s = dt.ToString("dd-MM-yyyy", CultureInfo.InvariantCulture);
+                lvAfternoon.Items.Add(Convert.ToString(s)).SubItems.AddRange(row);
+            }
+            conn.Close();
+
+            //query for evening shifts
+            string sqlC = $"SELECT * FROM eveningshifts WHERE date BETWEEN {DateRange()};";
+            MySqlCommand cmdC = new MySqlCommand(sqlC, this.conn);
+            conn.Open();
+            MySqlDataReader drC = cmdC.ExecuteReader();
+            while (drC.Read())
+            {
+                string[] row = new string[3];
+                row[0] = drC[1].ToString();
+                row[1] = drC[2].ToString();
+                row[2] = drC[3].ToString();
+                DateTime dt = DateTime.ParseExact(drC[0].ToString(), "dd/MM/yyyy hh:mm:ss", CultureInfo.InvariantCulture);
+                string s = dt.ToString("dd-MM-yyyy", CultureInfo.InvariantCulture);
+                lvEvening.Items.Add(Convert.ToString(s)).SubItems.AddRange(row);
+            }
+            conn.Close();
+
+        }
+        //
+        private void btnFilterDate_Shifts_Click(object sender, EventArgs e)
+        {
+            UpdateShiftsListView();
+        }
+
+        private void btnAssignShift_Click(object sender, EventArgs e)
+        {
+            int index = lbEmployees_Shifts.SelectedIndex;
+            string employeeName, departmentName;
+            employeeName = stats[index].firstName;
+            departmentName = stats[index].department;
+            string date = dtPicker_Shifts.Value.ToString("yyyy-MM-dd");
+
+            MySqlConnection connection;
+            string connectionString;
+            connectionString = "Server=studmysql01.fhict.local;Uid=dbi400999;Database=dbi400999;Pwd=Group6Project;";
+            connection = new MySqlConnection(connectionString);
+            try
+            {
+                connection.Open();
+                if (connection.State == ConnectionState.Open)
+                {
+                    MySqlCommand cmd = new MySqlCommand($"UPDATE {CheckShiftType()} SET {departmentName} = '{employeeName}' WHERE date = '{date}'", connection);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            connection.Close();
+            UpdateShiftsListView();
+        }
+
+        private void btnRemoveShift_Click(object sender, EventArgs e)
+        {
+            int index = lbEmployees_Shifts.SelectedIndex;
+            string departmentName;
+            departmentName = stats[index].department;
+            string date = dtPicker_Shifts.Value.ToString("yyyy-MM-dd");
+
+            MySqlConnection connection;
+            string connectionString;
+            connectionString = "Server=studmysql01.fhict.local;Uid=dbi400999;Database=dbi400999;Pwd=Group6Project;";
+            connection = new MySqlConnection(connectionString);
+            try
+            {
+                connection.Open();
+                if (connection.State == ConnectionState.Open)
+                {
+                    MySqlCommand cmd = new MySqlCommand($"UPDATE {CheckShiftType()} SET {departmentName} = NULL WHERE date = '{date}'", connection);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            connection.Close();
+            UpdateShiftsListView();
         }
     }
 }
