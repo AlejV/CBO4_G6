@@ -16,7 +16,7 @@ namespace MediaBazaarSolution
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new DepartmentManagement());
+            Application.Run(new EmployeeManagement());
         }
     }
 }

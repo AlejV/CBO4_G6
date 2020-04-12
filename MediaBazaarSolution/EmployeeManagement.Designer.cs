@@ -112,10 +112,6 @@
             this.tpMorning = new System.Windows.Forms.TabPage();
             this.gbMorning = new System.Windows.Forms.GroupBox();
             this.lvMorning = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tpAfternoon = new System.Windows.Forms.TabPage();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.lvAfternoon = new System.Windows.Forms.ListView();
@@ -205,7 +201,7 @@
             // 
             // btnAddEmployee
             // 
-            this.btnAddEmployee.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
+            this.btnAddEmployee.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAddEmployee.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.btnAddEmployee.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -759,7 +755,7 @@
             // 
             // btnRemoveEmployee
             // 
-            this.btnRemoveEmployee.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
+            this.btnRemoveEmployee.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnRemoveEmployee.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRemoveEmployee.Location = new System.Drawing.Point(1, 419);
@@ -772,8 +768,8 @@
             // 
             // lvAllEmployees
             // 
-            this.lvAllEmployees.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.lvAllEmployees.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lvAllEmployees.BackColor = System.Drawing.Color.LightGreen;
             this.lvAllEmployees.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
@@ -1082,15 +1078,10 @@
             // 
             // lvMorning
             // 
-            this.lvMorning.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.lvMorning.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lvMorning.BackColor = System.Drawing.Color.LightGreen;
-            this.lvMorning.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader3,
-            this.columnHeader4});
             this.lvMorning.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lvMorning.FullRowSelect = true;
             this.lvMorning.GridLines = true;
@@ -1101,26 +1092,6 @@
             this.lvMorning.TabIndex = 8;
             this.lvMorning.UseCompatibleStateImageBehavior = false;
             this.lvMorning.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "Date";
-            this.columnHeader1.Width = 94;
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "Electronics";
-            this.columnHeader2.Width = 92;
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "Cleaning";
-            this.columnHeader3.Width = 105;
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "Gardening";
-            this.columnHeader4.Width = 103;
             // 
             // tpAfternoon
             // 
@@ -1147,8 +1118,8 @@
             // 
             // lvAfternoon
             // 
-            this.lvAfternoon.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.lvAfternoon.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lvAfternoon.BackColor = System.Drawing.Color.LightGreen;
             this.lvAfternoon.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
@@ -1212,8 +1183,8 @@
             // 
             // lvEvening
             // 
-            this.lvEvening.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.lvEvening.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lvEvening.BackColor = System.Drawing.Color.LightGreen;
             this.lvEvening.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
@@ -1426,8 +1397,8 @@
             // 
             // lvStats
             // 
-            this.lvStats.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.lvStats.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lvStats.BackColor = System.Drawing.Color.LightGreen;
             this.lvStats.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
@@ -1581,10 +1552,6 @@
         private System.Windows.Forms.TabPage tabAssignShifts;
         private System.Windows.Forms.TabPage tpCalendar;
         private System.Windows.Forms.ListView lvMorning;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
-        private System.Windows.Forms.ColumnHeader columnHeader3;
-        private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.ListView lvEvening;
         private System.Windows.Forms.ColumnHeader columnHeader5;

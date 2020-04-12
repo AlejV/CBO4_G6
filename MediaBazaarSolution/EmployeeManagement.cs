@@ -28,41 +28,6 @@ namespace MediaBazaarSolution
             // Initialize required object
         }
 
-
-        void Delete()
-        {
-            int id = 69;
-            string sql = $"DELETE FROM product WHERE productID= {id};";
-            MySqlCommand cmd = new MySqlCommand(sql, this.conn);
-            //cmd.Parameters.AddWithValue("@userId", id); //int id = Convert.ToInt32(tbxId.Text);
-            conn.Open();
-            int effectedRows = cmd.ExecuteNonQuery();
-            conn.Close();
-        }
-        void LoadStatsOld()
-        {
-            stats.Clear();
-            string sql = "SELECT employeeID, firstName, position, departmentName FROM employee;";
-            MySqlCommand cmd = new MySqlCommand(sql, this.conn);
-            conn.Open();
-            MySqlDataReader dr = cmd.ExecuteReader();
-
-            while (dr.Read())
-            {
-                allEmployees.Add(new Statistics(Convert.ToInt32(dr[0]), dr[1].ToString(), dr[2].ToString(), dr[3].ToString()));
-            }
-            for (int i = 0; i < stats.Count; i++)
-            {
-                string[] row = stats[i].GetDetails();
-                if (stats[i].position == "Employee")
-                {
-                    lvStats.Items.Add(stats[i].id.ToString()).SubItems.AddRange(row);
-
-                }
-                //lvStats.Items.Add(stats[i].id.ToString()).SubItems.AddRange(row);
-            }
-            conn.Close();
-        } //this can be removed
         void LoadStats()
         {
             stats.Clear();
@@ -137,6 +102,7 @@ namespace MediaBazaarSolution
             }
             LoadAllEmployees();
             LoadStats();
+            UpdateShiftsListView();
             try
             {
                 MySqlConnection conn = new MySqlConnection("server=studmysql01.fhict.local;database=dbi400999;uid=dbi400999;password=Group6Project;");
@@ -146,16 +112,6 @@ namespace MediaBazaarSolution
                 MessageBox.Show(ex.ToString());
                 throw;
             }
-            for (int i = 0; i < 5; i++)
-            {
-                string[] row = {"Ivan","Petur","Zdravko"};
-                lvMorning.Items.Add("25-06-2000").SubItems.AddRange(row);
-            }
-            /*BackColor = Color.FromArgb(255, 224, 192);
-            lbUsers.Items.Clear();
-            lbUsers.Items.AddRange(Soundcloud.GetUsers().ToArray());
-            lblYourFavs.Text = "Please select a user from the Users list.";
-            lblAvailable.Text = "No user selected";*/
         }  //Form1_Load !!!
         
         private void btnAddEmployee_Click(object sender, EventArgs e)
@@ -448,10 +404,6 @@ namespace MediaBazaarSolution
 
         }
 
-        private void label25_Click(object sender, EventArgs e)
-        {
-
-        }
         void LoadInsertTextboxes() // method that loads info into the "edit info" textboxes
         {
             int index;
@@ -484,6 +436,7 @@ namespace MediaBazaarSolution
         {
             LoadInsertTextboxes();
         }
+
 
                             //code for shifts starts here
 
@@ -519,6 +472,7 @@ namespace MediaBazaarSolution
         private void tcShifts_SelectedIndexChanged(object sender, EventArgs e)
         {
             UpdateShiftsInfo();
+            UpdateShiftsListView();
         }
         void RefreshDate()
         {
@@ -551,61 +505,35 @@ namespace MediaBazaarSolution
         //update shifts info
         void UpdateShiftsListView()
         {
+            lvMorning.Columns.Clear();
             lvMorning.Items.Clear();
+            lvAfternoon.Columns.Clear();
             lvAfternoon.Items.Clear();
+            lvEvening.Columns.Clear();
             lvEvening.Items.Clear();
-
-            //query for morning shifts
-            string sql = $"SELECT * FROM morningshifts WHERE date BETWEEN {DateRange()};";
-            MySqlCommand cmd = new MySqlCommand(sql, this.conn);
-            conn.Open();
-            MySqlDataReader dr = cmd.ExecuteReader();
-            while (dr.Read())
-            {
-                string[] row = new string[3];
-                row[0] = dr[1].ToString();
-                row[1] = dr[2].ToString();
-                row[2] = dr[3].ToString();
-                DateTime dt = DateTime.ParseExact(dr[0].ToString(), "dd/MM/yyyy hh:mm:ss", CultureInfo.InvariantCulture);
-                string s = dt.ToString("dd-MM-yyyy", CultureInfo.InvariantCulture);
-                lvMorning.Items.Add(Convert.ToString(s)).SubItems.AddRange(row);
-            }
-            conn.Close();
-
-            //query for afternoon shifts
-            string sqlB = $"SELECT * FROM afternoonshifts WHERE date BETWEEN {DateRange()};";
+            int dateCount = testDates();
+            string sqlB = $"SELECT `COLUMN_NAME` FROM `INFORMATION_SCHEMA`.`COLUMNS` WHERE `TABLE_SCHEMA` = 'dbi400999' AND `TABLE_NAME`= '{CheckShiftType()}'; ";
             MySqlCommand cmdB = new MySqlCommand(sqlB, this.conn);
             conn.Open();
             MySqlDataReader drB = cmdB.ExecuteReader();
+
+            List<string> departments = new List<string>();
             while (drB.Read())
             {
-                string[] row = new string[3];
-                row[0] = drB[1].ToString();
-                row[1] = drB[2].ToString();
-                row[2] = drB[3].ToString();
-                DateTime dt = DateTime.ParseExact(drB[0].ToString(), "dd/MM/yyyy hh:mm:ss", CultureInfo.InvariantCulture);
-                string s = dt.ToString("dd-MM-yyyy", CultureInfo.InvariantCulture);
-                lvAfternoon.Items.Add(Convert.ToString(s)).SubItems.AddRange(row);
+                departments.Add(drB[0].ToString());
             }
+            departments.RemoveAt(0);
+            lvMorning.Items[0].BackColor = Color.White;
+            lvAfternoon.Items[0].BackColor = Color.White;
+            lvEvening.Items[0].BackColor = Color.White;
+
             conn.Close();
 
-            //query for evening shifts
-            string sqlC = $"SELECT * FROM eveningshifts WHERE date BETWEEN {DateRange()};";
-            MySqlCommand cmdC = new MySqlCommand(sqlC, this.conn);
-            conn.Open();
-            MySqlDataReader drC = cmdC.ExecuteReader();
-            while (drC.Read())
-            {
-                string[] row = new string[3];
-                row[0] = drC[1].ToString();
-                row[1] = drC[2].ToString();
-                row[2] = drC[3].ToString();
-                DateTime dt = DateTime.ParseExact(drC[0].ToString(), "dd/MM/yyyy hh:mm:ss", CultureInfo.InvariantCulture);
-                string s = dt.ToString("dd-MM-yyyy", CultureInfo.InvariantCulture);
-                lvEvening.Items.Add(Convert.ToString(s)).SubItems.AddRange(row);
-            }
-            conn.Close();
+            lvMorning.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+            lvAfternoon.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+            lvEvening.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
 
+            FillRows(departments, dateCount);
         }
         //
         private void btnFilterDate_Shifts_Click(object sender, EventArgs e)
@@ -640,6 +568,7 @@ namespace MediaBazaarSolution
             }
             connection.Close();
             UpdateShiftsListView();
+            UpdateStatistics();
         }
 
         private void btnRemoveShift_Click(object sender, EventArgs e)
@@ -668,6 +597,74 @@ namespace MediaBazaarSolution
             }
             connection.Close();
             UpdateShiftsListView();
+            UpdateStatistics();
+        }
+
+        int testDates()
+        {
+            lvMorning.Columns.Add("Department");
+            lvAfternoon.Columns.Add("Department");
+            lvEvening.Columns.Add("Department");
+            string sql = $"SELECT date FROM {CheckShiftType()} WHERE date BETWEEN {DateRange()};";
+            MySqlCommand cmd = new MySqlCommand(sql, this.conn);
+            conn.Open();
+            MySqlDataReader dr = cmd.ExecuteReader();
+
+            List<string> dates = new List<string>();
+            while (dr.Read())
+            {
+                string[] row = new string[1];
+                row[0] = dr[0].ToString();
+                //row[1] = dr[2].ToString();
+                //row[2] = dr[3].ToString();
+                DateTime dt = DateTime.ParseExact(dr[0].ToString(), "dd/MM/yyyy hh:mm:ss", CultureInfo.InvariantCulture);
+                string s = dt.ToString("dd-MM-yyyy", CultureInfo.InvariantCulture);
+                dates.Add(Convert.ToString(s));
+            }
+            foreach (string item in dates)
+            {
+                lvMorning.Columns.Add(Convert.ToString(item));
+                lvAfternoon.Columns.Add(Convert.ToString(item));
+                lvEvening.Columns.Add(Convert.ToString(item));
+            }
+
+            string[] days = new string[dates.Count];
+            for (int i = 0; i < dates.Count; i++)
+            {
+                DateTime dt = DateTime.ParseExact(dates[i].ToString(), "dd-MM-yyyy", CultureInfo.InvariantCulture);
+                string s = dt.ToString("dddd", CultureInfo.InvariantCulture);
+                days[i] = s;
+            }
+            lvMorning.Items.Add("").SubItems.AddRange(days);
+            lvAfternoon.Items.Add("").SubItems.AddRange(days);
+            lvEvening.Items.Add("").SubItems.AddRange(days);
+            
+            conn.Close();
+
+            return dates.Count;
+        }
+
+        void FillRows(List<string> departments, int dateCount)
+        {
+            for (int i = 0; i < departments.Count; i++)
+            {
+                string sql = $"SELECT {departments[i]} FROM {CheckShiftType()} WHERE date BETWEEN {DateRange()};";
+                MySqlCommand cmd = new MySqlCommand(sql, this.conn);
+                conn.Open();
+                MySqlDataReader dr = cmd.ExecuteReader();
+                string[] row = new string[dateCount];
+                int index = 0;
+                while (dr.Read())
+                {
+                    row[index] = dr[0].ToString();
+                    index++;
+                }
+                lvMorning.Items.Insert(i+1, Convert.ToString(departments[i])).SubItems.AddRange(row);
+                lvAfternoon.Items.Insert(i + 1, Convert.ToString(departments[i])).SubItems.AddRange(row);
+                lvEvening.Items.Insert(i + 1, Convert.ToString(departments[i])).SubItems.AddRange(row);
+
+                conn.Close();
+            }
         }
     }
 }
