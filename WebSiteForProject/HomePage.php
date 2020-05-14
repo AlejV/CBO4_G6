@@ -15,7 +15,7 @@
             <li><a href="HomePage.php">Home</a></li>
             <li><a href="ContactManager.php">Contact manager</a></li>
             <li><a href="UserProfile.php" >
-                Welcome, <?php
+                Profile and Shifts - <?php
                     echo "{$_SESSION['fname'] }  {$_SESSION['lname']}"
                     ?>
                 </a>
@@ -28,6 +28,9 @@
 </header>
 <div class="homePageContent">
     <h1>Media Bazaar Hardware Store</h1>
+    <h2 id="welcome" >Welcome, <?php
+        echo "{$_SESSION['fname'] }  {$_SESSION['lname']}"
+        ?></h2>
     <div class="homePageParagraphs">
 
     </div>

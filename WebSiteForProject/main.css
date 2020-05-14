@@ -146,3 +146,9 @@ h1{
         width: 100%;
     }
 }
+
+#welcome{
+    text-align: center;
+    font-size: 400%;
+    color: white;
+}

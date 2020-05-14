@@ -19,7 +19,7 @@
                     <li><a href="HomePage.php">Home</a></li>
                     <li><a href="ContactManager.php">Contact manager</a></li>
                     <li><a href= "UserProfile.php">
-                            Welcome, <?php echo "{$_SESSION['fname'] }  {$_SESSION['lname']}"?>
+                            Profile and Shifts - <?php echo "{$_SESSION['fname'] }  {$_SESSION['lname']}"?>
                         </a>
 
                 </ul>
@@ -69,16 +69,127 @@
     </div>
     <div class="myProfileTitle">
         <h1>Shift Details:</h1>
+        <h2 id="currentMonth"> Selected month: -</h2>
     </div>
     <div class="rowProfile">
         <div class="shiftInfo">
-            <!-- Top up credits pop up form -->
-            <p>Coming soon!</p>
+            <div class="shiftColumn">
+                <form name ="lbUserList" Method="post" action="UserProfile.php">
+                    <p class="shiftname"> Morning Shifts:</p>
+                    <select class="lbox" name="taskOption" size="5" id="listboxMorning">
+                        <!-- Dates will be here -->
+                    </select>
+                </form>
+            </div>
+            <div class="shiftColumn">
+                <form name ="lbUserList" Method="post" action="UserProfile.php">
+                    <p class="shiftname"> Afternoon Shifts:</p>
+                    <select class="lbox" name="taskOption" size="5" id="listboxAfternoon">
+                        <!-- Dates will be here -->
+                    </select>
 
+                </form>
+            </div>
+            <div class="shiftColumn">
+                <form name ="lbUserList" Method="post" action="UserProfile.php">
+                    <p class="shiftname"> Evening Shifts:</p>
+                    <select class="lbox" name="taskOption" size="5" id="listboxEvening">
+                        <!-- Dates will be here -->
+                    </select>
+
+                </form>
+            </div>
+            <div class="shiftColumn">
+                <p class="shiftname"> Select Month:</p>
+                <form name ="cbxMonths" Method="post" action="UserProfile.php">
+                    <select name="selectMonths" id="months">
+                        <option value="January">January</option>
+                        <option value="February">February</option>
+                        <option value="March">March</option>
+                        <option value="April">April</option>
+                        <option value="May">May</option>
+                        <option value="June">June</option>
+                        <option value="July">July</option>
+                        <option value="August">August</option>
+                        <option value="September">September</option>
+                        <option value="October">October</option>
+                        <option value="November">November</option>
+                        <option value="December">December</option>
+                    </select>
+                    <div class="container">
+                        <button type="submit" class="btn" id = "selectMonth" name="buttonSelectMonth">Select Month</button>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 </div>
 <footer class="footer">All rights reserved (c) 2020 George Manev</footer>
+
+<script>
+    //Gets the array that is JSON encoded from MorningJSON.php
+    var myObj;
+    var name;
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            myObj = JSON.parse(this.responseText);
+
+            //adds the shifts from the array to the listbox
+            for (let i = 0; i < myObj.length; i++) {
+                var para = document.createElement("option");
+                var node = document.createTextNode(myObj[i]);
+                para.appendChild(node);
+                var element = document.getElementById("listboxMorning");
+                element.appendChild(para);
+            }
+        }
+    };
+    xmlhttp.open("GET", "MorningJSON.php", true);
+    xmlhttp.send();
+
+    //Gets the array that is JSON encoded from AfternoonJSON.php
+    var myObjA;
+    var nameA;
+    var xmlhttpA = new XMLHttpRequest();
+    xmlhttpA.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            myObjA = JSON.parse(this.responseText);
+
+            //adds the shifts from the array to the listbox
+            for (let i = 0; i < myObjA.length; i++) {
+                var para = document.createElement("option");
+                var node = document.createTextNode(myObjA[i]);
+                para.appendChild(node);
+                var element = document.getElementById("listboxAfternoon");
+                element.appendChild(para);
+            }
+        }
+    };
+    xmlhttpA.open("GET", "AfternoonJSON.php", true);
+    xmlhttpA.send();
+
+    //Gets the array that is JSON encoded from AfternoonJSON.php
+    var myObjB;
+    var nameB;
+    var xmlhttpB = new XMLHttpRequest();
+    xmlhttpB.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            myObjB = JSON.parse(this.responseText);
+
+            //adds the shifts from the array to the listbox
+            for (let i = 0; i < myObjB.length; i++) {
+                var para = document.createElement("option");
+                var node = document.createTextNode(myObjB[i]);
+                para.appendChild(node);
+                var element = document.getElementById("listboxEvening");
+                element.appendChild(para);
+            }
+        }
+    };
+    xmlhttpB.open("GET", "EveningJSON.php", true);
+    xmlhttpB.send();
+</script>
 
 </body>
 <?php
@@ -91,10 +202,56 @@ function debug_to_console($data) {
 
     echo "<script>console.log('Debug Objects: " . $output . "' );</script>";
 }
+include 'QueryDates.php';
+function getNames(){
+    $morningTwoValues = GetMorningDates();
+    $afternoonTwoValues = GetAfternoonDates();
+    $eveningTwoValues = GetEveningDates();
+    $morningArray = array();
+    $afternoonArray = array();
+    $eveningArray = array();
+
+    //Convert the associative array into indexed array
+    for ($i = 0; $i < count($morningTwoValues); $i++){
+        $morningArray[$i] = $morningTwoValues[$i][0];
+    }
+    $_SESSION["morningArray"] = $morningArray;
+    //afternoon shifts array
+    for ($i = 0; $i < count($afternoonTwoValues); $i++){
+        $afternoonArray[$i] = $afternoonTwoValues[$i][0];
+        //debug_to_console($afternoonArray[$i]);
+    }
+    $_SESSION["afternoonArray"] = $afternoonArray;
+    //evening shifts array
+    for ($i = 0; $i < count($eveningTwoValues); $i++){
+        $eveningArray[$i] = $eveningTwoValues[$i][0];
+        debug_to_console($eveningArray[$i]);
+    }
+    $_SESSION["eveningArray"] = $eveningArray;
+}
 
 
 function getAge($date) { // Y-m-d format
     return intval(substr(date('Ymd') - date('Ymd', strtotime($date)), 0, -4));
 }
+$_SESSION["selectMonthsGlobal"] = "May";
+if (isset($_POST["buttonSelectMonth"])) {
+    $option = isset($_POST['selectMonths']) ? $_POST['selectMonths'] : false;
+    if ($option) {
+        $_SESSION["selectMonthsGlobal"] = $_POST['selectMonths'];
+        $test = $_SESSION["selectMonthsGlobal"];
+        $test2 = CheckMonth($test);
+        //debug_to_console($test2);
+        //DeleteUser($_POST['taskOption']);
+    } else {
+        echo "<script type='text/javascript'>alert('Please choose a user from the list');</script>";
+        exit;
+    }
+}
+getNames();
 ?>
 </html>
+
+<script>
+    document.getElementById("currentMonth").innerHTML = "Selected Month: <?php echo $_SESSION["selectMonthsGlobal"] ?>";
+</script>
