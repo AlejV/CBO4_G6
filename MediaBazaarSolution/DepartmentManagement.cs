@@ -152,14 +152,14 @@ namespace MediaBazaarSolution
         {
             //lvEmployees_Dep.Items.Clear();
             allEmployees.Clear();
-            string sql = "SELECT employeeID, firstName, position, departmentName FROM employee;";
+            string sql = "SELECT employeeID, firstName, lastName, position, departmentName FROM employee;";
             MySqlCommand cmd = new MySqlCommand(sql, this.conn);
             conn.Open();
             MySqlDataReader dr = cmd.ExecuteReader();
 
             while (dr.Read())
             {
-                allEmployees.Add(new Statistics(Convert.ToInt32(dr[0]), dr[1].ToString(), dr[2].ToString(), dr[3].ToString()));
+                allEmployees.Add(new Statistics(Convert.ToInt32(dr[0]), dr[1].ToString(), dr[2].ToString(), dr[3].ToString(), dr[4].ToString()));
             }
             conn.Close();
         }

@@ -16,7 +16,7 @@ using System.Text.RegularExpressions;
 
 namespace MediaBazaarSolution
 {
-    //git bash doesn't allow long commit messages so I need to commit 2 times to describe what I did
+    
     public partial class EmployeeManagement : Form
     {
         MySqlConnection conn = new MySqlConnection("server=studmysql01.fhict.local;database=dbi400999;uid=dbi400999;password=Group6Project;");
@@ -42,14 +42,14 @@ namespace MediaBazaarSolution
             {
                 if (allEmployees[i].position == "Employee")
                 {
-                    stats.Add(new Statistics(allEmployees[i].id, allEmployees[i].firstName, allEmployees[i].position, allEmployees[i].department));
+                    stats.Add(new Statistics(allEmployees[i].id, allEmployees[i].firstName, allEmployees[i].lastName, allEmployees[i].position, allEmployees[i].department));
                 }
             }
             for (int i = 0; i < stats.Count; i++)
             {
                 string[] row = stats[i].GetDetails();
-                lvStats.Items.Add(stats[i].firstName.ToString()).SubItems.AddRange(row);
-                lbEmployees_Shifts.Items.Add(stats[i].firstName.ToString());
+                lvStats.Items.Add($"{stats[i].firstName} {stats[i].lastName}").SubItems.AddRange(row);
+                lbEmployees_Shifts.Items.Add($"{stats[i].firstName} {stats[i].lastName}");
                 lbEmployees_Shifts.SelectedIndex = 0;
             }
         }
@@ -57,14 +57,14 @@ namespace MediaBazaarSolution
         {
             lvAllEmployees.Items.Clear();
             allEmployees.Clear();
-            string sql = "SELECT employeeID, firstName, position, departmentName FROM employee;";
+            string sql = "SELECT employeeID, firstName, lastName, position, departmentName FROM employee;";
             MySqlCommand cmd = new MySqlCommand(sql, this.conn);
             conn.Open();
             MySqlDataReader dr = cmd.ExecuteReader();
 
             while (dr.Read())
             {
-                allEmployees.Add(new Statistics(Convert.ToInt32(dr[0]), dr[1].ToString(), dr[2].ToString(), dr[3].ToString()));
+                allEmployees.Add(new Statistics(Convert.ToInt32(dr[0]), dr[1].ToString(), dr[2].ToString(), dr[3].ToString(), dr[4].ToString()));
             }
             for (int i = 0; i < allEmployees.Count; i++)
             {
@@ -595,7 +595,7 @@ namespace MediaBazaarSolution
                 conn.Close();
 
                 //afternoon shift counter
-                string sqlB = $"SELECT COUNT(*) FROM afternoonshifts WHERE {department}='{firstName}' AND date BETWEEN '{CheckMonth()}';";
+                string sqlB = $"SELECT COUNT(*) FROM afternoonshifts WHERE {department}='{id}' AND date BETWEEN '{CheckMonth()}';";
                 MySqlCommand cmdB = new MySqlCommand(sqlB, this.conn);
                 conn.Open();
                 MySqlDataReader drB = cmdB.ExecuteReader();
@@ -606,7 +606,7 @@ namespace MediaBazaarSolution
                 conn.Close();
 
                 //evening shift counter
-                string sqlC = $"SELECT COUNT(*) FROM eveningshifts WHERE {department}='{firstName}' AND date BETWEEN '{CheckMonth()}';";
+                string sqlC = $"SELECT COUNT(*) FROM eveningshifts WHERE {department}='{id}' AND date BETWEEN '{CheckMonth()}';";
                 MySqlCommand cmdC = new MySqlCommand(sqlC, this.conn);
                 conn.Open();
                 MySqlDataReader drC = cmdC.ExecuteReader();
@@ -653,7 +653,7 @@ namespace MediaBazaarSolution
                     lblFavShift.ForeColor = Color.Orange;
                 }
                 //payroll
-                string sqlpayroll = $"SELECT salary FROM employee WHERE firstName='{firstName}';";
+                string sqlpayroll = $"SELECT salary FROM employee WHERE employeeID='{id}';";
                 MySqlCommand cmdpayroll = new MySqlCommand(sqlpayroll, this.conn);
                 conn.Open();
                 MySqlDataReader drpayroll = cmdpayroll.ExecuteReader();
@@ -740,10 +740,11 @@ namespace MediaBazaarSolution
         {
             int index;
             index = lbEmployees_Shifts.SelectedIndex;
-            string employeeName, departmentName;
+            string employeeName, employeeLastName, departmentName;
             employeeName = stats[index].firstName;
+            employeeLastName = stats[index].lastName;
             departmentName = stats[index].department;
-            lblEmployee_Shifts.Text = employeeName;
+            lblEmployee_Shifts.Text = $"{employeeName} {employeeLastName}";
             lblDepartment_Shifts.Text = departmentName;
 
             int indexTwo = tcShifts.SelectedIndex;
@@ -840,8 +841,9 @@ namespace MediaBazaarSolution
         private void btnAssignShift_Click(object sender, EventArgs e)
         {
             int index = lbEmployees_Shifts.SelectedIndex;
-            string employeeName, departmentName;
-            employeeName = stats[index].firstName;
+            int employeeID;
+            string departmentName;
+            employeeID = stats[index].id;
             departmentName = stats[index].department;
             string date = dtPicker_Shifts.Value.ToString("yyyy-MM-dd");
 
@@ -854,7 +856,7 @@ namespace MediaBazaarSolution
                 connection.Open();
                 if (connection.State == ConnectionState.Open)
                 {
-                    MySqlCommand cmd = new MySqlCommand($"UPDATE {CheckShiftType()} SET {departmentName} = '{employeeName}' WHERE date = '{date}'", connection);
+                    MySqlCommand cmd = new MySqlCommand($"UPDATE {CheckShiftType()} SET {departmentName} = '{employeeID}' WHERE date = '{date}'", connection);
                     cmd.ExecuteNonQuery();
                 }
             }
@@ -952,7 +954,21 @@ namespace MediaBazaarSolution
                 int index = 0;
                 while (dr.Read())
                 {
-                    row[index] = dr[0].ToString();
+                    int employeeId = 0;
+                    bool tryParse = int.TryParse(dr[0].ToString(), out employeeId);
+ 
+                    //employeeId = Convert.ToInt32(dr[0].ToString());
+                    //int employeeId = 101;
+                    string name = "";
+                    foreach (Statistics employee in allEmployees)
+                    {
+                        if (employee.id == employeeId)
+                        {
+                            name = $"{employee.firstName} {employee.lastName}";
+                            break;
+                        }
+                    }
+                    row[index] = name;
                     index++;
                 }
                 lvMorning.Items.Insert(i+1, Convert.ToString(departments[i])).SubItems.AddRange(row);
