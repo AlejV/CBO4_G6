@@ -16,7 +16,7 @@ namespace MediaBazaarSolution
 
         public Product(string Name, int Quantity, double Price, string DepartmentName)
         {
-            //this.Id = Id;
+           // this.Id = Id;
             this.Name = Name;
             this.Quantity = Quantity;
             this.Price = Price;
@@ -26,11 +26,10 @@ namespace MediaBazaarSolution
         public string[] GetDetails()
         {
             string[] details = new string[3];
-            //details[0] = firstName;
-            //details[0] = Name;
             details[0] = Quantity.ToString();
             details[1] = Price.ToString();
             return details;
+          
         }
     }
 }

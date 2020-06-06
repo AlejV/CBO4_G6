@@ -38,9 +38,8 @@ namespace MediaBazaarSolution
             {
                 count++;
             }
-            if (count == 1)
-            {
-                MessageBox.Show("Username and password are correct");
+           // if (count == 1)
+            //{
                 connection.Close();
                 connection.Dispose();
                 this.Hide();
@@ -49,12 +48,12 @@ namespace MediaBazaarSolution
                 txt_Password.Clear();
                 mainMenu1.Show();
 
-            }
-            else if (count > 1)
+            //}
+            /*else if (count > 1)
             {
                 MessageBox.Show("Duplicate username and pass");
             }
-            else if (count < 1) { MessageBox.Show("Incorrect username or password"); }
+            else if (count < 1) { MessageBox.Show("Incorrect username or password"); }*/
 
 
             connection.Close();
