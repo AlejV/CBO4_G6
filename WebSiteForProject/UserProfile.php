@@ -75,25 +75,8 @@
         <div class="shiftInfo">
             <div class="shiftColumn">
                 <form name ="lbUserList" Method="post" action="UserProfile.php">
-                    <p class="shiftname"> Morning Shifts:</p>
-                    <select class="lbox" name="taskOption" size="5" id="listboxMorning">
-                        <!-- Dates will be here -->
-                    </select>
-                </form>
-            </div>
-            <div class="shiftColumn">
-                <form name ="lbUserList" Method="post" action="UserProfile.php">
-                    <p class="shiftname"> Afternoon Shifts:</p>
-                    <select class="lbox" name="taskOption" size="5" id="listboxAfternoon">
-                        <!-- Dates will be here -->
-                    </select>
-
-                </form>
-            </div>
-            <div class="shiftColumn">
-                <form name ="lbUserList" Method="post" action="UserProfile.php">
-                    <p class="shiftname"> Evening Shifts:</p>
-                    <select class="lbox" name="taskOption" size="5" id="listboxEvening">
+                    <p class="shiftname"> Your Shifts:</p>
+                    <select class="lbox" name="taskOption" size="5" id="combined">
                         <!-- Dates will be here -->
                     </select>
 
@@ -127,68 +110,27 @@
 <footer class="footer">All rights reserved (c) 2020 George Manev</footer>
 
 <script>
-    //Gets the array that is JSON encoded from MorningJSON.php
-    var myObj;
-    var name;
-    var xmlhttp = new XMLHttpRequest();
-    xmlhttp.onreadystatechange = function() {
+    //Gets the array that is JSON encoded from AllShiftsJSON.php
+    var myObjC;
+    var nameC;
+    var xmlhttpC = new XMLHttpRequest();
+    xmlhttpC.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-            myObj = JSON.parse(this.responseText);
+            myObjC = JSON.parse(this.responseText);
 
             //adds the shifts from the array to the listbox
-            for (let i = 0; i < myObj.length; i++) {
+            for (let i = 0; i < myObjC.length; i++) {
                 var para = document.createElement("option");
-                var node = document.createTextNode(myObj[i]);
+                var node = document.createTextNode(myObjC[i]);
                 para.appendChild(node);
-                var element = document.getElementById("listboxMorning");
+                var element = document.getElementById("combined");
                 element.appendChild(para);
             }
         }
     };
-    xmlhttp.open("GET", "MorningJSON.php", true);
-    xmlhttp.send();
+    xmlhttpC.open("GET", "AllShiftsJSON.php", true);
+    xmlhttpC.send();
 
-    //Gets the array that is JSON encoded from AfternoonJSON.php
-    var myObjA;
-    var nameA;
-    var xmlhttpA = new XMLHttpRequest();
-    xmlhttpA.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            myObjA = JSON.parse(this.responseText);
-
-            //adds the shifts from the array to the listbox
-            for (let i = 0; i < myObjA.length; i++) {
-                var para = document.createElement("option");
-                var node = document.createTextNode(myObjA[i]);
-                para.appendChild(node);
-                var element = document.getElementById("listboxAfternoon");
-                element.appendChild(para);
-            }
-        }
-    };
-    xmlhttpA.open("GET", "AfternoonJSON.php", true);
-    xmlhttpA.send();
-
-    //Gets the array that is JSON encoded from AfternoonJSON.php
-    var myObjB;
-    var nameB;
-    var xmlhttpB = new XMLHttpRequest();
-    xmlhttpB.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            myObjB = JSON.parse(this.responseText);
-
-            //adds the shifts from the array to the listbox
-            for (let i = 0; i < myObjB.length; i++) {
-                var para = document.createElement("option");
-                var node = document.createTextNode(myObjB[i]);
-                para.appendChild(node);
-                var element = document.getElementById("listboxEvening");
-                element.appendChild(para);
-            }
-        }
-    };
-    xmlhttpB.open("GET", "EveningJSON.php", true);
-    xmlhttpB.send();
 </script>
 
 </body>

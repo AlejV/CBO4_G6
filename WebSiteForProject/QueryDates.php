@@ -43,7 +43,7 @@ function buildQuery($tbl)
 
 function GetMorningDates()
 {
-    $employeeName = $_SESSION['username'];
+    $employeeName = $_SESSION['id'];
     $servername = "studmysql01.fhict.local";
     $database = 'dbi400999';
     $username = "dbi400999";
@@ -63,7 +63,7 @@ function GetMorningDates()
 }
 function GetAfternoonDates()
 {
-    $employeeName = $_SESSION['username'];
+    $employeeName = $_SESSION['id'];
     $servername = "studmysql01.fhict.local";
     $database = 'dbi400999';
     $username = "dbi400999";
@@ -84,7 +84,7 @@ function GetAfternoonDates()
 
 function GetEveningDates()
 {
-    $employeeName = $_SESSION['username'];
+    $employeeName = $_SESSION['id'];
     $servername = "studmysql01.fhict.local";
     $database = 'dbi400999';
     $username = "dbi400999";

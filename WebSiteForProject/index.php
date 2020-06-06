@@ -11,7 +11,7 @@
 <form method="post">
     <div class="container2">
         <div class="tbUserInput">
-            <label for="uname"><b>FirstName:</b></label>
+            <label for="uname"><b>Username:</b></label>
             <input class="textboxInside" type="text" placeholder="First Name" name="uname" required>
             <br>
             </div>
@@ -46,11 +46,11 @@ include 'ServerSettings.php';
 
 $queryusername = $_POST["uname"];
 $querypassword = $_POST["psw"];
-$sql ='SELECT * FROM employee WHERE firstName = :firstName AND pass= :pword';
+$sql ='SELECT * FROM employee WHERE username = :username AND pass= :pword';
 $stmt = $conn->prepare($sql);
 $stmt->execute(
 	[
-		':firstName'=> $queryusername,
+		':username'=> $queryusername,
         ':pword' => $querypassword
 	]
 );
@@ -58,11 +58,11 @@ $result = $stmt->fetch();
 if($stmt->rowCount() > 0)
 {
 $_SESSION["loggedin"] = true;
-$sql2 ='SELECT * FROM employee WHERE firstName = :firstName';
+$sql2 ='SELECT * FROM employee WHERE username = :username';
 $stmt2 = $conn->prepare($sql2);
 $stmt2->execute(
 	[
-		':firstName'=> $queryusername,
+		':username'=> $queryusername,
     ]
 );
 $resultt = $stmt2->fetch();
@@ -76,7 +76,7 @@ $_SESSION['contactPhone'] = $resultt["contactPhone"];
 $_SESSION['salary'] = $resultt["salary"];
 $_SESSION['position'] = $resultt["position"];
 $_SESSION['lname'] = $resultt["lastName"];
-$_SESSION['username'] = $resultt["firstName"];
+$_SESSION['username'] = $resultt["username"];
 $_SESSION['birthDate'] = $result["dateOfBirth"];
 $_SESSION['department'] = $resultt["departmentName"];
 
@@ -91,9 +91,6 @@ $stmt3->execute(
 );
 $resultProfiles = $stmt3->fetch();
 
-$_SESSION['role'] = $resultProfiles["role"];
-$_SESSION['membershipExpires'] = $resultProfiles["membershipExpires"];
-$_SESSION['credits'] = $resultProfiles["credits"];
 
 header('Location:HomePage.php');
 }
