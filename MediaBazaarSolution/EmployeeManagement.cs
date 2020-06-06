@@ -16,7 +16,7 @@ using System.Text.RegularExpressions;
 
 namespace MediaBazaarSolution
 {
-    
+    //git bash doesn't allow long commit messages so I need to commit 2 times to describe what I did
     public partial class EmployeeManagement : Form
     {
         MySqlConnection conn = new MySqlConnection("server=studmysql01.fhict.local;database=dbi400999;uid=dbi400999;password=Group6Project;");
