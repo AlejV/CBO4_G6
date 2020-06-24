@@ -18,6 +18,7 @@
                     <li><a href="Logout.php">Log Out</a></li>
                     <li><a href="HomePage.php">Home</a></li>
                     <li><a href="ContactManager.php">Contact manager</a></li>
+                    <li><a href="Contracts.php">View my contracts</a></li>
                     <li><a href= "UserProfile.php">
                             Profile and Shifts - <?php echo "{$_SESSION['fname'] }  {$_SESSION['lname']}"?>
                         </a>

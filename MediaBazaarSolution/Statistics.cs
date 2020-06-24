@@ -31,6 +31,15 @@ namespace MediaBazaarSolution
             details[1] = department;
             return details;
         }
+
+        public string[] GetDetail()
+        {
+            string[] details = new string[2];
+            //details[0] = firstName;
+            details[0] = position;
+            return details;
+        }
+
         public override string ToString()
         {
             return $"{id}, {firstName}, {position}";

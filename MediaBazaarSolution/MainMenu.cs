@@ -12,28 +12,37 @@ namespace MediaBazaarSolution
 {
     public partial class MainMenu : Form
     {
-        public MainMenu()
+        LoginNew login;
+        public MainMenu(LoginNew login)
         {
+            this.login = login;
             InitializeComponent();
         }
 
         private void btnEmployeeManage_Click(object sender, EventArgs e)
         {
-            EmployeeManagement employeeManagement = new EmployeeManagement();
+            EmployeeManagement employeeManagement = new EmployeeManagement(this);
             employeeManagement.Show();
+            this.Hide();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Stocks stocks = new Stocks();
+            Stocks stocks = new Stocks(this);
             stocks.Show();
+            this.Hide();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            DepartmentManagement departmentManagement = new DepartmentManagement();
+            DepartmentManagement departmentManagement = new DepartmentManagement(this);
             departmentManagement.Show();
+            this.Hide();
+        }
 
+        private void MainMenu_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            login.Show();
         }
     }
 }

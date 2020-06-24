@@ -18,7 +18,6 @@ namespace MediaBazaarSolution
         public LoginNew()
         {
             InitializeComponent();
-           
         }
 
         private void LoginNew_Load(object sender, EventArgs e)
@@ -38,22 +37,19 @@ namespace MediaBazaarSolution
             {
                 count++;
             }
-           // if (count == 1)
-            //{
+           if (count == 1)
+            {
                 connection.Close();
                 connection.Dispose();
                 this.Hide();
-                MainMenu mainMenu1 = new MainMenu();
+                MainMenu mainMenu1 = new MainMenu(this);
                 txt_Username.Clear();
                 txt_Password.Clear();
                 mainMenu1.Show();
 
-            //}
-            /*else if (count > 1)
-            {
-                MessageBox.Show("Duplicate username and pass");
             }
-            else if (count < 1) { MessageBox.Show("Incorrect username or password"); }*/
+            else
+            { MessageBox.Show("Incorrect username or password"); }
 
 
             connection.Close();

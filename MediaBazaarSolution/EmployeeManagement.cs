@@ -19,15 +19,17 @@ namespace MediaBazaarSolution
     
     public partial class EmployeeManagement : Form
     {
+        MainMenu mainMenu;
         MySqlConnection conn = new MySqlConnection("server=studmysql01.fhict.local;database=dbi400999;uid=dbi400999;password=Group6Project;");
         List<Statistics> stats = new List<Statistics>(); // this is is the list only with position "Employee"
         List<Statistics> allEmployees = new List<Statistics>(); //this is the list with all the people in the shop
         private string currentUser;//currently selected user from the lvAllEmployees (Edit Info Tab)
         private CurrentWorkerInfo currentWorkerInfo; //currently selected user from the lvAllEmployees (Edit Info Tab)
 
-        //List<WorkerFullInfo> fullInfoList = new List<WorkerFullInfo>(); //this list is needed for the insert function
-        public EmployeeManagement()
+        
+        public EmployeeManagement(MainMenu mainMenu)
         {
+            this.mainMenu = mainMenu;
             InitializeComponent();
             this.MinimumSize = new Size(400, 300);
             // Initialize required object
@@ -339,12 +341,22 @@ namespace MediaBazaarSolution
                 MessageBox.Show(ex.Message);
             }
             connection.Close();
+
+
             LoadAllEmployees();
             LoadStats();
+
+            int lastEmployeeID = allEmployees[allEmployees.Count - 1].id;
+            NewContract(lastEmployeeID, Convert.ToInt32(tbSalary.Text), comboBox2.Text, comboBox1.Text);
         }
 
         private void btnRemoveEmployee_Click(object sender, EventArgs e)
         {
+            if (lvAllEmployees.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("Please select an employee from the list");
+                return;
+            }
             if (MessageBox.Show("Are you sure you want to delete this employee ?", "Warning", MessageBoxButtons.YesNo) == DialogResult.No)
             {
                 return;
@@ -491,11 +503,10 @@ namespace MediaBazaarSolution
                 connection.Open();
                 if (connection.State == ConnectionState.Open)
                 {
-                    MessageBox.Show("Data entered succesfully.");
-                    MySqlCommand cmd = new MySqlCommand("INSERT INTO contracts (employeeID, dateOfChange, newSalary, newDepartment, newPosition) VALUES (@employeeID,'2020-05-05' ,@newSalary, @newDepartment, @newPosition)", connection);
+                    MySqlCommand cmd = new MySqlCommand("INSERT INTO contracts (employeeID, dateOfChange, newSalary, newDepartment, newPosition) VALUES (@employeeID, @dateOfChange ,@newSalary, @newDepartment, @newPosition)", connection);
 
                     cmd.Parameters.AddWithValue("@employeeID", employeeID);
-                    //cmd.Parameters.AddWithValue("@dateOfBirth", Convert.ToDateTime(DateTime.Now));
+                    cmd.Parameters.AddWithValue("@dateOfChange", Convert.ToDateTime(DateTime.Now));
                     cmd.Parameters.AddWithValue("@newSalary", newSalary);
                     cmd.Parameters.AddWithValue("@newDepartment", newDepartment);
                     cmd.Parameters.AddWithValue("@newPosition", newPosition);
@@ -989,6 +1000,11 @@ namespace MediaBazaarSolution
             currentWorkerInfo = null;
             currentUser = "";
             lvAllEmployees.SelectedItems.Clear();
+        }
+
+        private void EmployeeManagement_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            mainMenu.Show();
         }
     }
 }

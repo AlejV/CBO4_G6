@@ -152,3 +152,34 @@ h1{
     font-size: 400%;
     color: white;
 }
+
+* {
+    box-sizing: border-box;
+}
+
+/* Create four equal columns that floats next to each other */
+
+.columnC {
+    float: left;
+    width: 15%;
+    padding: 10px;
+    padding-bottom: 0px;
+    height: auto;
+    margin-top: 20px;
+}
+
+/* Clear floats after the columns */
+.rowC:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+#initial{
+    text-align: right;
+    float: left;
+    margin-top: 20px;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}

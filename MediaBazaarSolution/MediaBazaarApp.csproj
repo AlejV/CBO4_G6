@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CurrentWorkerInfo.cs" />
+    <Compile Include="Department.cs" />
     <Compile Include="DepartmentManagement.cs">
       <SubType>Form</SubType>
     </Compile>

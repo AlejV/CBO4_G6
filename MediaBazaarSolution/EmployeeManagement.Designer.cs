@@ -1715,6 +1715,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "EmployeeManagement";
             this.Text = "Media Bazaar Employee Management System";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.EmployeeManagement_FormClosed);
             this.Load += new System.EventHandler(this.EmployeeManagement_Load);
             this.tabControl2.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
